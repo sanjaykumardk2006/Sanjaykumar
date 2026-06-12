@@ -1,0 +1,101 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: background var(--t-slow), border-color var(--t-slow), padding var(--t-slow);
+}
+.navbar.scrolled {
+  background: rgba(10,10,10,0.92);
+  border-bottom: 1px solid var(--div);
+  padding: 14px 0;
+}
+.nav-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--t1);
+  letter-spacing: -0.03em;
+  transition: color var(--t-fast);
+}
+.nav-logo:hover { color: var(--hv-clr); }
+.logo-dot { color: var(--t3); }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav-link {
+  padding: 6px 16px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--t2);
+  border-radius: 6px;
+  transition: color var(--t-fast);
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--t1);
+  transition: width var(--t-fast);
+}
+.nav-link:hover {
+  color: var(--hv-clr);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 60%;
+}
+.nav-link.active {
+  color: var(--t1);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  background: none; border: none; cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 20px; height: 1.5px;
+  background: var(--t2);
+  border-radius: 2px;
+  transition: all var(--t-base);
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+@media (max-width: 640px) {
+  .hamburger { display: flex; }
+  .nav-menu {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(10,10,10,0.98);
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 4px; z-index: 1000;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 12px 36px;
+    width: 100%; text-align: center;
+  }
+}
