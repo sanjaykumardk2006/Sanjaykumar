@@ -6,7 +6,7 @@ const projects = [
     id: 'proj-freelancer',
     title: 'Freelancer Marketplace',
     icon: 'fa-solid fa-bullseye', // similar to the "purpose" target icon
-    desc: 'A full-stack Freelancer Marketplace platform that enables clients to post jobs, freelancers to submit proposals, and both parties to track project progress efficiently.',
+    desc: 'Developed a full-stack Freelancer Marketplace web application that connects clients and freelancers on a single platform. The system enables clients to post job opportunities with required skills, budget, experience, and deadlines, while freelancers can browse available jobs and submit proposals. Clients can review proposals, accept or reject them with feedback, and assign projects to suitable freelancers.',
     image: '/proj-freelancer.png',
     tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     liveUrl: '#',
@@ -17,7 +17,7 @@ const projects = [
     id: 'proj-water',
     title: 'Water Quality Prediction',
     icon: 'fa-solid fa-eye', // similar to the "vision" eye icon
-    desc: 'Developed a Machine Learning solution for sewage wastewater analysis that calculates the Water Quality Index (WQI), predicts water quality levels, and generates treatment recommendations based on the analysis results.',
+    desc: 'Developed a Machine Learning-based water quality analysis system that automates the evaluation of sewage wastewater using key water parameters. The system calculates the Water Quality Index (WQI), classifies water quality into Good, Moderate, and Poor categories, and provides appropriate treatment recommendations to support effective water management and environmental sustainability.',
     image: '/proj-water.png',
     tags: ['Python', 'NumPy','Matplotlib', 'Pandas'],
     liveUrl: '#',
@@ -70,11 +70,8 @@ export default function Projects() {
               
               <div className="pg-card-bottom">
                 <div className="pg-actions">
-                  <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="pg-btn">
+                  <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="pg-btn pg-btn-primary">
                     <i className="fab fa-github" /> GitHub
-                  </a>
-                  <a href={p.liveUrl} className="pg-btn pg-btn-primary">
-                    <i className="fas fa-external-link-alt" /> View Project
                   </a>
                 </div>
               </div>
