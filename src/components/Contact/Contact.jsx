@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { m } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 const containerVariants = {
@@ -19,8 +20,14 @@ const itemVariants = {
   }
 }
 
+// ✅ Replace these with your actual EmailJS credentials
+const SERVICE_ID  = 'service_95bvrwr'
+const TEMPLATE_ID = 'template_vaj43hn'
+const PUBLIC_KEY  = 'b2__WEMtdgromPClB'
+
 export default function Contact() {
   const [status, setStatus] = useState('idle')
+  const formRef    = useRef(null)
   const nameRef    = useRef(null)
   const emailRef   = useRef(null)
   const subjectRef = useRef(null)
@@ -32,7 +39,6 @@ export default function Contact() {
     e.preventDefault()
     const name    = nameRef.current.value.trim()
     const email   = emailRef.current.value.trim()
-    const subject = subjectRef.current.value.trim()
     const message = messageRef.current.value.trim()
 
     ;[nameRef, emailRef, messageRef].forEach(r => r.current.parentElement.classList.remove('invalid'))
@@ -45,15 +51,16 @@ export default function Contact() {
 
     setStatus('sending')
 
-    const mailSubject = subject || `Portfolio Contact from ${name}`
-    const mailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    const mailtoLink = `mailto:sanjaykumardk2006@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`
-
-    window.location.href = mailtoLink
-
-    setStatus('done')
-    e.target.reset()
-    setTimeout(() => setStatus('idle'), 4000)
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      setStatus('done')
+      formRef.current.reset()
+      setTimeout(() => setStatus('idle'), 4000)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setStatus('idle')
+      alert('Failed to send message. Please try again.')
+    }
   }
 
   return (
@@ -110,7 +117,7 @@ export default function Contact() {
 
           {/* Right Column */}
           <div className="contact-col contact-col-right">
-            <form className="contact-form-wrapper" noValidate onSubmit={handleSubmit}>
+            <form ref={formRef} className="contact-form-wrapper" noValidate onSubmit={handleSubmit}>
               <m.div variants={itemVariants} className="contact-card contact-right">
                 
                 <div className="contact-form-new">
