@@ -34,9 +34,9 @@ export default function Contact() {
     const email   = emailRef.current.value.trim()
     const subject = subjectRef.current.value.trim()
     const message = messageRef.current.value.trim()
-    
+
     ;[nameRef, emailRef, messageRef].forEach(r => r.current.parentElement.classList.remove('invalid'))
-    
+
     let valid = true
     if (!name)                { nameRef.current.parentElement.classList.add('invalid');    nameRef.current.focus();    valid = false }
     if (!isValidEmail(email)) { emailRef.current.parentElement.classList.add('invalid');   if (valid) emailRef.current.focus();   valid = false }
@@ -44,12 +44,11 @@ export default function Contact() {
     if (!valid) return
 
     setStatus('sending')
-    
-    // Construct the mailto link
+
     const mailSubject = subject || `Portfolio Contact from ${name}`
     const mailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     const mailtoLink = `mailto:sanjaykumardk2006@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`
-    
+
     window.location.href = mailtoLink
 
     setStatus('done')

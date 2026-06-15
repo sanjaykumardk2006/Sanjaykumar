@@ -72,12 +72,12 @@ export default function Hero() {
         >
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
           <m.h1 variants={itemVariants} className="hero-name">SANJAYKUMAR<br /><span>D K</span></m.h1>
-          <m.p variants={itemVariants} className="hero-role" style={{ marginTop: '-0.5rem', marginBottom: '0' }}>Aspiring Full Stack Developer</m.p>
-          <m.p variants={itemVariants} className="hero-description" style={{ marginTop: '0.5rem', color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.1rem', maxWidth: '600px', lineHeight: '1.6' }}>
+          <m.p variants={itemVariants} className="hero-role">Aspiring Full Stack Developer</m.p>
+          <m.p variants={itemVariants} className="hero-description">
             Building scalable web applications with a focus on performance, usability, and modern development practices.
           </m.p>
 
-          <m.div variants={buttonVariants} className="hero-actions" style={{ marginTop: '2.5rem', gap: '24px' }}>
+          <m.div variants={buttonVariants} className="hero-actions">
             <m.a
               href="#projects"
               className="btn btn-primary"
