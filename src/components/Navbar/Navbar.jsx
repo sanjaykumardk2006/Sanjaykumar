@@ -5,7 +5,7 @@ import './Navbar.css'
 const links = [
   { href: '#home',           label: 'Home',           section: 'home'           },
   { href: '#about',          label: 'About',          section: 'about'          },
-  { href: '#qualifications', label: 'Career & Achievements', section: 'qualifications' },
+  { href: '#qualifications', label: 'Journey', section: 'qualifications' },
   { href: '#projects',       label: 'Projects',       section: 'projects'       },
   { href: '#contact',        label: 'Contact',        section: 'contact'        },
 ]

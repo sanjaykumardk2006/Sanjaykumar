@@ -6,38 +6,44 @@ const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons'
 const techCategories = [
   {
     id: 'frontend',
-    title: 'Frontend',
+    title: 'Frontend Development',
+    desc: 'Building responsive, modern, and user-friendly web applications using modern frontend technologies.',
+    className: 'bento-large',
     techs: [
       { name: 'React',      src: `${DEVICON}/react/react-original.svg`,           brand: '#61DAFB' },
       { name: 'JavaScript', src: `${DEVICON}/javascript/javascript-original.svg`, brand: '#F7DF1E' },
-      { name: 'HTML',       src: `${DEVICON}/html5/html5-original.svg`,           brand: '#E34F26' },
-      { name: 'CSS',        src: `${DEVICON}/css3/css3-original.svg`,             brand: '#1572B6' },
+      { name: 'HTML5',      src: `${DEVICON}/html5/html5-original.svg`,           brand: '#E34F26' },
+      { name: 'CSS3',       src: `${DEVICON}/css3/css3-original.svg`,             brand: '#1572B6' },
     ],
   },
   {
     id: 'backend',
-    title: 'Backend',
+    title: 'Backend Development',
+    desc: 'Developing scalable server-side applications and REST APIs.',
+    className: 'bento-medium',
     techs: [
-      { name: 'Node.js', src: `${DEVICON}/nodejs/nodejs-original.svg`, brand: '#339933' },
-      { name: 'PHP',     src: `${DEVICON}/php/php-original.svg`,       brand: '#777BB4' },
+      { name: 'Node.js',    src: `${DEVICON}/nodejs/nodejs-original.svg`,         brand: '#339933' },
+      { name: 'Express.js', src: `${DEVICON}/express/express-original.svg`,       brand: '#FFFFFF', inv: true },
     ],
   },
   {
     id: 'database',
-    title: 'Database',
+    title: 'Database Management',
+    desc: 'Designing and managing structured and scalable databases.',
+    className: 'bento-medium',
     techs: [
-      { name: 'MongoDB', src: `${DEVICON}/mongodb/mongodb-original.svg`, brand: '#47A248' },
-      { name: 'MySQL',   src: `${DEVICON}/mysql/mysql-original.svg`,     brand: '#00758F' },
+      { name: 'MySQL',      src: `${DEVICON}/mysql/mysql-original.svg`,           brand: '#4479A1' },
+      { name: 'MongoDB',    src: `${DEVICON}/mongodb/mongodb-original.svg`,       brand: '#47A248' },
     ],
   },
   {
     id: 'tools',
-    title: 'Tools',
+    title: 'Tools & Workflow',
+    desc: 'Version control and development tools used during development.',
+    className: 'bento-large',
     techs: [
-      { name: 'Git',      src: `${DEVICON}/git/git-original.svg`,              brand: '#F05032' },
-      { name: 'GitHub',   src: `${DEVICON}/github/github-original.svg`,      brand: '#FFFFFF', inv: true },
-      { name: 'Unity',    src: `${DEVICON}/unity/unity-original.svg`,        brand: '#FFFFFF', inv: true },
-      { name: 'Power BI', src: '/powerbi.svg', brand: '#F2C811' },
+      { name: 'Git',        src: `${DEVICON}/git/git-original.svg`,              brand: '#F05032' },
+      { name: 'Unity',      src: `${DEVICON}/unity/unity-original.svg`,          brand: '#FFFFFF', inv: true },
     ],
   },
 ]
@@ -107,36 +113,29 @@ export default function About() {
         >
           <m.h3 variants={fadeUpVariant} className="ts-heading">Tech Stack</m.h3>
           <div className="tech-stack-arena">
-            <div className="ts-category-grid">
+            <div className="bento-grid">
             {techCategories.map((category) => (
               <m.div
                 key={category.id}
-                className="ts-category-card"
+                className={`bento-card ${category.className}`}
                 variants={cardVariant}
-                whileHover={{ y: -2, scale: 1.01 }}
               >
-                <span className="ts-category-label">{category.title}</span>
-                <div className="ts-tech-grid">
-                  {category.techs.map((tech, index) => (
+                <h4 className="bento-title">{category.title}</h4>
+                <p className="bento-desc">{category.desc}</p>
+                <div className="bento-chips">
+                  {category.techs.map((tech) => (
                     <div
                       key={tech.name}
-                      className={`ts-tech-item ts-icon-float-${(index % 4) + 1}`}
+                      className="tech-chip"
                       title={tech.name}
                       style={{ '--ts-brand': tech.brand }}
                     >
-                      <div className="ts-tech-icon">
-                        <img
-                          src={tech.src}
-                          alt={tech.name}
-                          width="44"
-                          height="44"
-                          loading="lazy"
-                          className={[
-                            tech.inv ? 'ts-inv' : '',
-                            tech.lightBg ? 'ts-light-bg' : '',
-                          ].filter(Boolean).join(' ')}
-                        />
-                      </div>
+                      <img
+                        src={tech.src}
+                        alt={tech.name}
+                        loading="lazy"
+                        className={`chip-icon ${tech.inv ? 'ts-inv' : ''}`}
+                      />
                       <span>{tech.name}</span>
                     </div>
                   ))}

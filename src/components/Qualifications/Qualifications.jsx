@@ -40,7 +40,7 @@ export default function Qualifications() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="heading-label">Career &amp; Achievements</span>
+          <span className="heading-label">Journey</span>
         </m.div>
 
         <m.div 
