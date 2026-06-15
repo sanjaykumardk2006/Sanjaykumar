@@ -47,7 +47,7 @@ export default function Projects() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="heading-label">Projects</span>
-          <span className="heading-sub">Showcase</span>
+          <span className="heading-sub">Things I've Built</span>
         </m.div>
 
         <div className="projects-grid">

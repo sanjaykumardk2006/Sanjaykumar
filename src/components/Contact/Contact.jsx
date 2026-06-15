@@ -32,6 +32,7 @@ export default function Contact() {
     e.preventDefault()
     const name    = nameRef.current.value.trim()
     const email   = emailRef.current.value.trim()
+    const subject = subjectRef.current.value.trim()
     const message = messageRef.current.value.trim()
     
     ;[nameRef, emailRef, messageRef].forEach(r => r.current.parentElement.classList.remove('invalid'))
@@ -43,7 +44,14 @@ export default function Contact() {
     if (!valid) return
 
     setStatus('sending')
-    await new Promise(r => setTimeout(r, 1800))
+    
+    // Construct the mailto link
+    const mailSubject = subject || `Portfolio Contact from ${name}`
+    const mailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    const mailtoLink = `mailto:sanjaykumardk2006@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`
+    
+    window.location.href = mailtoLink
+
     setStatus('done')
     e.target.reset()
     setTimeout(() => setStatus('idle'), 4000)

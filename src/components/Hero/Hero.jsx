@@ -12,8 +12,8 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" }
   }
@@ -21,8 +21,8 @@ const itemVariants = {
 
 const buttonVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut", delay: 0.4 }
   }
@@ -35,7 +35,7 @@ export default function Hero() {
     const onMove = e => {
       if (!spotlight) return
       spotlight.style.left = e.clientX + 'px'
-      spotlight.style.top  = e.clientY + 'px'
+      spotlight.style.top = e.clientY + 'px'
     }
     if (prefersFinePointer.matches) {
       spotlight = document.createElement('div')
@@ -62,9 +62,9 @@ export default function Hero() {
       <div className="orb orb-1" aria-hidden="true" />
       <div className="orb orb-2" aria-hidden="true" />
       <div className="orb orb-3" aria-hidden="true" />
-      
+
       <div className="container hero-grid">
-        <m.div 
+        <m.div
           className="hero-text"
           variants={containerVariants}
           initial="hidden"
@@ -72,9 +72,12 @@ export default function Hero() {
         >
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
           <m.h1 variants={itemVariants} className="hero-name">SANJAYKUMAR<br /><span>D K</span></m.h1>
-          <m.p variants={itemVariants} className="hero-role">A Full Stack Developer</m.p>
-          
-          <m.div variants={buttonVariants} className="hero-actions">
+          <m.p variants={itemVariants} className="hero-role" style={{ marginTop: '-0.5rem', marginBottom: '0' }}>Aspiring Full Stack Developer</m.p>
+          <m.p variants={itemVariants} className="hero-description" style={{ marginTop: '0.5rem', color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.1rem', maxWidth: '600px', lineHeight: '1.6' }}>
+            Transforming ideas into scalable web applications with a focus on performance, usability, and modern development practices.
+          </m.p>
+
+          <m.div variants={buttonVariants} className="hero-actions" style={{ marginTop: '2.5rem' }}>
             <m.a
               href="#projects"
               className="btn btn-primary"
@@ -99,8 +102,8 @@ export default function Hero() {
             </m.a>
           </m.div>
         </m.div>
-        
-        <m.div 
+
+        <m.div
           className="hero-image"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -113,8 +116,8 @@ export default function Hero() {
               className="profile-photo"
             />
           </div>
-          <m.div 
-            className="hero-socials" 
+          <m.div
+            className="hero-socials"
             style={{ marginTop: '64px' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,7 +135,7 @@ export default function Hero() {
           </m.div>
         </m.div>
       </div>
-      
+
     </section>
   )
 }
