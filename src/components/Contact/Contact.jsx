@@ -151,20 +151,18 @@ export default function Contact() {
                     />
                   </div>
                 </div>
+                <m.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className={`btn-gradient-submit${status === 'done' ? ' done' : ''}`}
+                  disabled={status === 'sending'}
+                >
+                  {status === 'idle'    && <><i className="fas fa-paper-plane" /> Connect</>}
+                  {status === 'sending' && <><i className="fas fa-spinner fa-spin" /> Connecting…</>}
+                  {status === 'done'    && <><i className="fas fa-check" /> Connected!</>}
+                </m.button>
               </m.div>
-
-              <m.button
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className={`btn-gradient-submit btn-outside${status === 'done' ? ' done' : ''}`}
-                disabled={status === 'sending'}
-              >
-                {status === 'idle'    && <><i className="fas fa-paper-plane" /> Connect</>}
-                {status === 'sending' && <><i className="fas fa-spinner fa-spin" /> Connecting…</>}
-                {status === 'done'    && <><i className="fas fa-check" /> Connected!</>}
-              </m.button>
             </form>
           </div>
         </m.div>

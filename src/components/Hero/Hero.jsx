@@ -74,10 +74,10 @@ export default function Hero() {
           <m.h1 variants={itemVariants} className="hero-name">SANJAYKUMAR<br /><span>D K</span></m.h1>
           <m.p variants={itemVariants} className="hero-role" style={{ marginTop: '-0.5rem', marginBottom: '0' }}>Aspiring Full Stack Developer</m.p>
           <m.p variants={itemVariants} className="hero-description" style={{ marginTop: '0.5rem', color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.1rem', maxWidth: '600px', lineHeight: '1.6' }}>
-            Transforming ideas into scalable web applications with a focus on performance, usability, and modern development practices.
+            Building scalable web applications with a focus on performance, usability, and modern development practices.
           </m.p>
 
-          <m.div variants={buttonVariants} className="hero-actions" style={{ marginTop: '2.5rem' }}>
+          <m.div variants={buttonVariants} className="hero-actions" style={{ marginTop: '2.5rem', gap: '24px' }}>
             <m.a
               href="#projects"
               className="btn btn-primary"
@@ -87,7 +87,7 @@ export default function Hero() {
               whileTap={{ scale: 0.98 }}
               style={{ background: '#ffffff', color: '#000000', borderColor: '#ffffff' }}
             >
-              View Projects
+              Track Projects
             </m.a>
             <m.a
               href="/resume.pdf"
@@ -118,7 +118,7 @@ export default function Hero() {
           </div>
           <m.div
             className="hero-socials"
-            style={{ marginTop: '64px' }}
+            style={{ marginTop: '100px' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}

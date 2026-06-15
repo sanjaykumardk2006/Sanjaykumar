@@ -62,7 +62,7 @@
 .hero-actions {
   display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px;
 }
-.hero-socials { display: flex; gap: 20px; }
+.hero-socials { display: flex; gap: 32px; }
 .social-link {
   width: 52px; height: 52px;
   display: flex; align-items: center; justify-content: center;
@@ -71,10 +71,10 @@
   transition: all var(--t-base);
 }
 .social-link:hover {
-  color: var(--hv-clr);
-  border-color: var(--hv-border);
-  background: var(--hv-bg);
-  transform: translateY(-2px);
+  color: #ffffff;
+  border-color: #ffffff;
+  background: transparent;
+  transform: translateY(-8px);
 }
 .hero-image {
   display: flex;
