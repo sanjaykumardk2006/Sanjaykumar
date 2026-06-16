@@ -183,6 +183,15 @@
   color: rgba(255, 255, 255, 0.45);
 }
 
+.success-message {
+  color: #a7f3d0;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
 .btn-gradient-submit {
   margin: 32px auto 0;
   width: max-content;
@@ -213,7 +222,7 @@
 }
 
 .btn-gradient-submit.done {
-  background: #22c55e;
+  background: #ffffff;
 }
 
 @media (max-width: 800px) {

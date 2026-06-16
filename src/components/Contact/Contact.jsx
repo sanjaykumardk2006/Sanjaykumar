@@ -20,6 +20,37 @@ const itemVariants = {
   }
 }
 
+const MagneticButton = ({ children, className, ...props }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const buttonRef = useRef(null)
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e
+    const { width, height, left, top } = buttonRef.current.getBoundingClientRect()
+    const x = clientX - (left + width / 2)
+    const y = clientY - (top + height / 2)
+    setPosition({ x: x * 0.3, y: y * 0.3 })
+  }
+
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 })
+  }
+
+  return (
+    <m.button
+      ref={buttonRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
+      className={className}
+      {...props}
+    >
+      {children}
+    </m.button>
+  )
+}
+
 // ✅ Replace these with your actual EmailJS credentials
 const SERVICE_ID  = 'service_95bvrwr'
 const TEMPLATE_ID = 'template_vaj43hn'
@@ -157,7 +188,10 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <m.button
+                {status === 'done' && (
+                  <p className="success-message">Connected successfully!</p>
+                )}
+                <MagneticButton
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
@@ -167,7 +201,7 @@ export default function Contact() {
                   {status === 'idle'    && <><i className="fas fa-paper-plane" /> Connect</>}
                   {status === 'sending' && <><i className="fas fa-spinner fa-spin" /> Connecting…</>}
                   {status === 'done'    && <><i className="fas fa-check" /> Connected!</>}
-                </m.button>
+                </MagneticButton>
               </m.div>
             </form>
           </div>
