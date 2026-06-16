@@ -1,6 +1,134 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { m } from 'framer-motion'
 import './Hero.css'
+
+const AudioSpectrum = () => {
+  const canvasRef = useRef(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d', { alpha: true })
+    
+    const handleResize = () => {
+      const wrap = canvas.parentElement
+      if (!wrap) return
+      const photoWidth = wrap.offsetWidth
+      const canvasSize = photoWidth * 1.8 
+      canvas.width = canvasSize
+      canvas.height = canvasSize
+      canvas.style.width = `${canvasSize}px`
+      canvas.style.height = `${canvasSize}px`
+    }
+    
+    window.addEventListener('resize', handleResize)
+    setTimeout(handleResize, 0)
+
+    let animationId
+    let time = 0
+
+    const numBars = 100
+    const bars = Array.from({ length: numBars }, (_, i) => ({
+      angle: (i / numBars) * Math.PI * 2,
+      currentHeight: 0,
+      targetHeight: 0,
+      speed: Math.random() * 0.1 + 0.05
+    }))
+
+    const particles = []
+    for (let i = 0; i < 90; i++) {
+      particles.push({
+        angle: Math.random() * Math.PI * 2,
+        distOffset: Math.random() * 40,
+        size: Math.random() * 1.2 + 0.5,
+        alpha: Math.random() * 0.8 + 0.2,
+        alphaTarget: Math.random() * 0.8 + 0.2,
+        alphaSpeed: Math.random() * 0.02 + 0.01,
+      })
+    }
+
+    const render = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      
+      const cx = canvas.width / 2
+      const cy = canvas.height / 2
+      const photoRadius = canvas.width / 1.8 / 2
+      const baseRadius = photoRadius + 12 // clean gap from the image
+      
+      ctx.lineCap = 'round'
+      
+      // Draw Bars
+      for (let bar of bars) {
+        if (Math.abs(bar.currentHeight - bar.targetHeight) < 0.5) {
+          // Mostly small bars, some higher peaks simulating audio
+          bar.targetHeight = Math.random() > 0.75 
+            ? Math.random() * (canvas.width * 0.06) 
+            : Math.random() * (canvas.width * 0.02)
+          bar.speed = Math.random() * 0.1 + 0.05
+        }
+        
+        bar.currentHeight += (bar.targetHeight - bar.currentHeight) * bar.speed
+        
+        const height = bar.currentHeight + 2 // minimum height
+        
+        const innerX = cx + Math.cos(bar.angle) * baseRadius
+        const innerY = cy + Math.sin(bar.angle) * baseRadius
+        const outerX = cx + Math.cos(bar.angle) * (baseRadius + height)
+        const outerY = cy + Math.sin(bar.angle) * (baseRadius + height)
+        
+        ctx.beginPath()
+        ctx.moveTo(innerX, innerY)
+        ctx.lineTo(outerX, outerY)
+        ctx.lineWidth = canvas.width * 0.006 // Thick bars
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)'
+        ctx.stroke()
+      }
+      
+      // Draw Particles (dots)
+      for (let p of particles) {
+        if (Math.abs(p.alpha - p.alphaTarget) < 0.02) {
+          p.alphaTarget = Math.random() * 0.8 + 0.2
+          p.alphaSpeed = Math.random() * 0.02 + 0.01
+        }
+        p.alpha += (p.alphaTarget - p.alpha) * p.alphaSpeed
+        
+        // Particles sit around and just outside the bars
+        const pRadius = baseRadius + (canvas.width * 0.01) + p.distOffset
+        
+        const px = cx + Math.cos(p.angle) * pRadius
+        const py = cy + Math.sin(p.angle) * pRadius
+        
+        ctx.beginPath()
+        ctx.arc(px, py, p.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`
+        ctx.fill()
+      }
+
+      animationId = requestAnimationFrame(render)
+    }
+    
+    render()
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      cancelAnimationFrame(animationId)
+    }
+  }, [])
+
+  return (
+    <canvas 
+      ref={canvasRef} 
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        pointerEvents: 'none',
+        zIndex: 0
+      }} 
+    />
+  )
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -110,11 +238,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <div className="profile-wrap">
-            <img
-              src="/profile.png"
-              alt="Sanjay Kumar"
-              className="profile-photo"
-            />
+            <AudioSpectrum />
           </div>
           <m.div
             className="hero-socials"
