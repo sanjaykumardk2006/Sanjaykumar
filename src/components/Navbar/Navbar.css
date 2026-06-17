@@ -21,9 +21,9 @@
 .nav-logo {
   font-family: var(--font-head);
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--t1);
-  letter-spacing: -0.03em;
+  letter-spacing: 0.04em;
   transition: color var(--t-fast);
 }
 .nav-logo:hover { color: var(--hv-clr); }
