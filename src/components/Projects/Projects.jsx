@@ -44,7 +44,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <span className="heading-label">Projects</span>
           <span className="heading-sub">Things I've Built</span>
@@ -55,7 +55,7 @@ export default function Projects() {
             <m.div 
               key={p.id}
               className="project-grid-card"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}

@@ -148,10 +148,11 @@ const itemVariants = {
 }
 
 const buttonVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: { duration: 0.6, ease: "easeOut", delay: 0.4 }
   }
 }
@@ -198,23 +199,7 @@ const RotatingRole = () => {
 
 export default function Hero() {
   useEffect(() => {
-    const prefersFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)')
-    let spotlight = null
-    const onMove = e => {
-      if (!spotlight) return
-      spotlight.style.left = e.clientX + 'px'
-      spotlight.style.top = e.clientY + 'px'
-    }
-    if (prefersFinePointer.matches) {
-      spotlight = document.createElement('div')
-      spotlight.className = 'cursor-spotlight'
-      document.body.appendChild(spotlight)
-      document.addEventListener('mousemove', onMove)
-    }
-    return () => {
-      document.removeEventListener('mousemove', onMove)
-      spotlight?.remove()
-    }
+    // Spotlight is now global in App.jsx
   }, [])
 
   const scrollTo = (e, href) => {
@@ -253,8 +238,13 @@ export default function Hero() {
               className="btn btn-primary"
               id="btn-view-projects"
               onClick={e => scrollTo(e, '#projects')}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -4,
+                boxShadow: '0 12px 30px rgba(255, 255, 255, 0.2), 0 0 24px rgba(59, 130, 246, 0.4)'
+              }}
               whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               style={{ background: '#ffffff', color: '#000000', borderColor: '#ffffff' }}
             >
               Track Projects
@@ -265,8 +255,13 @@ export default function Hero() {
               id="btn-resume"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -4,
+                boxShadow: '0 12px 30px rgba(255, 255, 255, 0.1), inset 0 0 16px rgba(59, 130, 246, 0.25)'
+              }}
               whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <i className="fas fa-eye" /> View Resume
             </m.a>

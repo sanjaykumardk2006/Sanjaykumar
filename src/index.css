@@ -21,9 +21,9 @@
   --r-lg: 18px;
   --r-xl: 24px;
     --section-py: 40px;
-    --t-fast: 140ms ease;
-  --t-base: 240ms ease;
-  --t-slow: 380ms ease;
+    --t-fast: 150ms ease;
+  --t-base: 250ms ease;
+  --t-slow: 350ms ease;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; background-color: #000000; }
@@ -154,13 +154,14 @@ img    { max-width: 100%; display: block; }
 }
 .cursor-spotlight {
   position: fixed;
-  width: 440px; height: 440px;
+  width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.028) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.035) 0%, transparent 60%);
+  filter: blur(40px);
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 0;
-  transition: left 0.1s ease, top 0.1s ease;
+  will-change: left, top;
 }
 .scroll-progress {
   position: fixed;

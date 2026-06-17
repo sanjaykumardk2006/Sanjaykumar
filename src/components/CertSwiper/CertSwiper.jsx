@@ -19,6 +19,7 @@ export default function CertSwiper({ certs = [] }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [modalImage, setModalImage] = useState(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const advance = () => {
     setActiveIndex((prev) => (prev + 1) % certs.length)
@@ -52,17 +53,21 @@ export default function CertSwiper({ certs = [] }) {
   }, [])
 
   useEffect(() => {
-    if (modalImage) return; // Don't auto-play when modal is open
+    if (modalImage || isHovered) return; // Don't auto-play when modal is open or hovered
     const interval = setInterval(() => {
       advance()
-    }, 2500)
+    }, 3000)
     return () => clearInterval(interval)
-  }, [certs.length, modalImage])
+  }, [certs.length, modalImage, isHovered])
 
   return (
     <>
       <div className="cert-swiper-stacked">
-        <div className="cert-deck-container">
+        <div 
+          className="cert-deck-container"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <AnimatePresence>
             {certs.map((cert, idx) => {
               // Calculate distance from active index
@@ -93,8 +98,8 @@ export default function CertSwiper({ certs = [] }) {
                     rotateY: layout.rotateY,
                     zIndex: certs.length - distanceFromActive,
                   }}
-                  exit={{ opacity: 0, scale: 0.8, y: -50, transition: { duration: 0.2 } }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30, mass: 0.8 }}
+                  exit={{ opacity: 0, scale: 0.8, y: -50, transition: { duration: 0.6 } }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
                   drag={isTop ? "x" : false}
                   dragConstraints={{ left: 0, right: 0 }}
                   onDragEnd={(e, { offset, velocity }) => {
@@ -117,7 +122,7 @@ export default function CertSwiper({ certs = [] }) {
                       <span className="cert-scard-issuer">{cert.issuer}</span>
                     </div>
                     <div className="cert-scard-body">
-                      <img src={cert.image} alt={cert.title} className="cert-img-preview" draggable="false" />
+                      <img src={cert.image} alt={cert.title} loading="lazy" className="cert-img-preview" draggable="false" />
                     </div>
                   </div>
                 </m.div>
@@ -152,8 +157,8 @@ export default function CertSwiper({ certs = [] }) {
             <m.div
               className="cert-modal-overlay"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.25 } }}
+              exit={{ opacity: 0, transition: { duration: 0.2 } }}
               onClick={() => setModalImage(null)}
             >
               <button
@@ -166,10 +171,9 @@ export default function CertSwiper({ certs = [] }) {
               </button>
               <m.div
                 className="cert-modal-content"
-                initial={{ scale: 0.92, y: 24 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.92, y: 24 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                initial={{ scale: 0.95, y: 10, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1, transition: { duration: 0.25, ease: "easeOut" } }}
+                exit={{ scale: 0.95, y: 10, opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="cert-modal-img-wrap">

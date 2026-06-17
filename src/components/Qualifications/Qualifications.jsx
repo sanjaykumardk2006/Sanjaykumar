@@ -34,10 +34,10 @@ export default function Qualifications() {
     <section id="qualifications" className="section">
       <div className="container">
         <m.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <span className="heading-label">Journey</span>
           <span className="heading-sub">Career Milestones</span>
@@ -45,10 +45,10 @@ export default function Qualifications() {
 
         <m.div 
           className="internship-layout"
-          initial={{ opacity: 0, scale: 0.98, y: 20 }}
+          initial={{ opacity: 0, scale: 0.98, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
         >
           <div className="certs-heading">
             <span className="section-eyebrow">Internship</span>
@@ -86,10 +86,10 @@ export default function Qualifications() {
 
         <m.div 
           className="certs-section"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
         >
           <div className="certs-heading">
             <span className="section-eyebrow">Certifications</span>
