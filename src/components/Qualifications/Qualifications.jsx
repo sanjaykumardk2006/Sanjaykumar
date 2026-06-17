@@ -34,13 +34,13 @@ export default function Qualifications() {
     <section id="qualifications" className="section">
       <div className="container">
         <m.div 
-          style={{ marginBottom: '32px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
           <span className="heading-label">Journey</span>
+          <span className="heading-sub">Career Milestones</span>
         </m.div>
 
         <m.div 
@@ -64,6 +64,9 @@ export default function Qualifications() {
                   Full Stack Developer
                   <span className="intern-sep">·</span>
                   Jan 2026
+                  <span className="remote-badge">
+                    <span className="remote-dot"></span> Remote
+                  </span>
                 </p>
               </div>
             </div>

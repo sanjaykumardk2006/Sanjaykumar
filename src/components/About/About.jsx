@@ -42,7 +42,7 @@ const techCategories = [
     desc: 'Version control and development tools used during development.',
     className: 'bento-large',
     techs: [
-      { name: 'Git',        src: `${DEVICON}/git/git-original.svg`,              brand: '#F05032' },
+      { name: 'GitHub',     src: `${DEVICON}/github/github-original.svg`,        brand: '#FFFFFF', inv: true },
       { name: 'Unity',      src: `${DEVICON}/unity/unity-original.svg`,          brand: '#FFFFFF', inv: true },
     ],
   },

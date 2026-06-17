@@ -199,10 +199,10 @@ export default function Hero() {
           animate="visible"
         >
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
-          <m.h1 variants={itemVariants} className="hero-name">SANJAYKUMAR<br /><span>D K</span></m.h1>
+          <m.h1 variants={itemVariants} className="hero-name">Sanjaykumar <span>D K</span></m.h1>
           <m.p variants={itemVariants} className="hero-role">Aspiring Full Stack Developer</m.p>
           <m.p variants={itemVariants} className="hero-description">
-            Building scalable web applications with a focus on performance, usability, and modern development practices.
+            Passionate about building modern, responsive web applications and creating seamless user experiences. I enjoy developing scalable solutions with clean and efficient code while continuously learning new technologies.
           </m.p>
 
           <m.div variants={buttonVariants} className="hero-actions">
