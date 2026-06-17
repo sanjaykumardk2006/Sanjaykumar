@@ -228,10 +228,7 @@
   font-weight: 900;
   letter-spacing: 0.08em;
   color: var(--t1);
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  text-decoration-thickness: 3px;
-  text-decoration-color: var(--t3);
+  text-decoration: none;
 }
 
 @media (max-width: 1000px) {

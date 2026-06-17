@@ -152,40 +152,52 @@ export default function Contact() {
               <m.div variants={itemVariants} className="contact-card contact-right">
                 
                 <div className="contact-form-new">
-                  <div className="input-box full-width">
-                    <i className="far fa-user input-icon" />
-                    <input
-                      ref={nameRef} type="text" name="name"
-                      placeholder="Your Name"
-                      onChange={e => e.target.parentElement.classList.remove('invalid')}
-                    />
+                  <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <label htmlFor="name" style={{ color: 'var(--t1)', fontSize: '0.9rem', fontWeight: 500, paddingLeft: '4px' }}>Name</label>
+                    <div className="input-box full-width">
+                      <i className="far fa-user input-icon" />
+                      <input
+                        ref={nameRef} type="text" name="name" id="name"
+                        placeholder="Your Name"
+                        onChange={e => e.target.parentElement.classList.remove('invalid')}
+                      />
+                    </div>
                   </div>
                   
-                  <div className="input-box full-width">
-                    <i className="far fa-envelope input-icon" />
-                    <input
-                      ref={emailRef} type="email" name="email"
-                      placeholder="Your Email"
-                      onChange={e => e.target.parentElement.classList.remove('invalid')}
-                    />
+                  <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <label htmlFor="email" style={{ color: 'var(--t1)', fontSize: '0.9rem', fontWeight: 500, paddingLeft: '4px' }}>Email</label>
+                    <div className="input-box full-width">
+                      <i className="far fa-envelope input-icon" />
+                      <input
+                        ref={emailRef} type="email" name="email" id="email"
+                        placeholder="Your Email"
+                        onChange={e => e.target.parentElement.classList.remove('invalid')}
+                      />
+                    </div>
                   </div>
 
-                  <div className="input-box full-width">
-                    <i className="fas fa-tag input-icon" />
-                    <input
-                      ref={subjectRef} type="text" name="subject"
-                      placeholder="Subject"
-                      onChange={e => e.target.parentElement.classList.remove('invalid')}
-                    />
+                  <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <label htmlFor="subject" style={{ color: 'var(--t1)', fontSize: '0.9rem', fontWeight: 500, paddingLeft: '4px' }}>Subject</label>
+                    <div className="input-box full-width">
+                      <i className="fas fa-tag input-icon" />
+                      <input
+                        ref={subjectRef} type="text" name="subject" id="subject"
+                        placeholder="Subject"
+                        onChange={e => e.target.parentElement.classList.remove('invalid')}
+                      />
+                    </div>
                   </div>
 
-                  <div className="input-box full-width textarea-box">
-                    <i className="fas fa-pen input-icon" />
-                    <textarea
-                      ref={messageRef} name="message" rows={5}
-                      placeholder="Your Message"
-                      onChange={e => e.target.parentElement.classList.remove('invalid')}
-                    />
+                  <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="message" style={{ color: 'var(--t1)', fontSize: '0.9rem', fontWeight: 500, paddingLeft: '4px' }}>Message</label>
+                    <div className="input-box full-width textarea-box">
+                      <i className="fas fa-pen input-icon" />
+                      <textarea
+                        ref={messageRef} name="message" id="message" rows={5}
+                        placeholder="Your Message"
+                        onChange={e => e.target.parentElement.classList.remove('invalid')}
+                      />
+                    </div>
                   </div>
                 </div>
                 {status === 'done' && (
