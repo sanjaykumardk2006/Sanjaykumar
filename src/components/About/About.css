@@ -32,9 +32,11 @@
   text-align: left;
 }
 .tech-stack-section {
-  margin-top: 0px;
-  padding: 24px 0 0;
-  border-top: 1px solid var(--div);
+  margin-top: 24px;
+  padding: 32px;
+  background: #000000;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .ts-heading {
   font-family: var(--font-head);
