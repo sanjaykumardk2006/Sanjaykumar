@@ -44,7 +44,7 @@
 .hero-greeting {
   font-family: 'Manrope', 'Inter', system-ui, sans-serif;
   font-size: clamp(2.5rem, 7vw, 5rem); color: var(--t2);
-  margin-bottom: 0; line-height: 1.0; letter-spacing: 0.08em; font-weight: 700;
+  margin-bottom: 8px; line-height: 1.0; letter-spacing: 0.08em; font-weight: 700;
 }
 .hero-name {
   font-family: 'Manrope', 'Inter', system-ui, sans-serif;
@@ -71,19 +71,22 @@
 .hero-actions {
   display: flex; flex-wrap: wrap; gap: 24px; margin-top: 2.5rem; margin-bottom: 40px;
 }
-.hero-socials { display: flex; gap: 32px; }
+.hero-socials { display: flex; gap: 32px; transform: translateX(-12px); }
 .social-link {
-  width: 52px; height: 52px;
   display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px; font-size: 1.35rem; color: var(--t2);
+  font-size: 2rem; color: rgba(255, 255, 255, 0.65);
   transition: all var(--t-base);
 }
 .social-link:hover {
   color: #ffffff;
-  border-color: #ffffff;
-  background: transparent;
-  transform: translateY(-8px);
+  transform: translateY(-5px);
+}
+.social-link img {
+  opacity: 0.65;
+  transition: opacity var(--t-base);
+}
+.social-link:hover img {
+  opacity: 1;
 }
 .hero-image {
   display: flex;
@@ -137,7 +140,7 @@
 
   .hero-greeting {
     font-size: clamp(2.25rem, 11vw, 3rem);
-    margin-bottom: 0;
+    margin-bottom: 6px;
   }
 
   .hero-role {
@@ -149,6 +152,7 @@
     justify-content: center;
     margin-bottom: 24px;
   }
+  .hero-socials { transform: none; }
 
   .profile-wrap, .profile-photo {
     width: 200px;

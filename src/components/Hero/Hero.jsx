@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { m } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { m, AnimatePresence } from 'framer-motion'
 import './Hero.css'
 
 const AudioSpectrum = () => {
@@ -156,6 +156,46 @@ const buttonVariants = {
   }
 }
 
+const ROLES = [
+  "Aspiring Full Stack Developer",
+  "Available for Work"
+]
+
+const RotatingRole = () => {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % ROLES.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="hero-role" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Invisible placeholder to maintain proper layout height */}
+      <div style={{ opacity: 0, pointerEvents: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <span style={{ width: '8px', height: '8px', borderRadius: '50%' }}></span>
+        Aspiring Full Stack Developer
+      </div>
+      
+      <AnimatePresence>
+        <m.div
+          key={index}
+          initial={{ y: 25, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -25, opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'inherit', color: '#ffffff', whiteSpace: 'nowrap', gap: '8px' }}
+        >
+          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27C93F', boxShadow: '0 0 8px rgba(39, 201, 63, 0.6)' }}></span>
+          {ROLES[index]}
+        </m.div>
+      </AnimatePresence>
+    </div>
+  )
+}
+
 export default function Hero() {
   useEffect(() => {
     const prefersFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)')
@@ -200,7 +240,9 @@ export default function Hero() {
         >
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
           <m.h1 variants={itemVariants} className="hero-name">Sanjaykumar <span>D K</span></m.h1>
-          <m.p variants={itemVariants} className="hero-role">Aspiring Full Stack Developer</m.p>
+          <m.div variants={itemVariants}>
+            <RotatingRole />
+          </m.div>
           <m.p variants={itemVariants} className="hero-description">
             Passionate about building modern, responsive web applications and creating seamless user experiences. I enjoy developing scalable solutions with clean and efficient code while continuously learning new technologies.
           </m.p>

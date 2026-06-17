@@ -19,14 +19,11 @@
 
 .ft-name {
   font-family: var(--font-head);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--t1);
   letter-spacing: -0.01em;
   margin-bottom: 12px;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-color: rgba(255,255,255,0.2);
 }
 
 .ft-bio {
@@ -39,13 +36,10 @@
 
 .ft-col-heading {
   font-family: var(--font-head);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--t1);
   margin-bottom: 20px;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-color: rgba(255,255,255,0.2);
 }
 
 .ft-links {
