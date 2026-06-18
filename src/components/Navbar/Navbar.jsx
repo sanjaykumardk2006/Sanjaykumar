@@ -72,7 +72,7 @@ export default function Navbar() {
     >
       <div className="nav-inner">
         <a href="#home" className="nav-logo" onClick={e => handleClick(e, '#home')}>
-          <img src="/logo.png" alt="Sanjaykumar Logo" className="nav-logo-img" />
+          <img src="/logo.png" alt="Sanjaykumar Logo" className="nav-logo-img" width="100" height="48" />
         </a>
         <ul className={`nav-menu${menuOpen ? ' open' : ''}`}>
           {links.map(l => (

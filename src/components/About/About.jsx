@@ -133,6 +133,8 @@ export default function About() {
                       <img
                         src={tech.src}
                         alt={tech.name}
+                        width="32"
+                        height="32"
                         loading="lazy"
                         className={`chip-icon ${tech.inv ? 'ts-inv' : ''}`}
                       />

@@ -93,7 +93,7 @@ export default function CardSwiper({ teamMembers = [] }) {
                   }}
                 >
                   <div className="scard team-scard">
-                    <img src={member.img} alt={member.name} className="team-img" draggable="false" />
+                    <img src={member.img} alt={member.name} className="team-img" draggable="false" width="100" height="100" />
                     <div className="team-overlay">
                       <h4 className="team-name">{member.name}</h4>
                       <p className="team-role">{member.role}</p>

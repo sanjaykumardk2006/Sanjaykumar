@@ -304,7 +304,7 @@ export default function Hero() {
               <i className="fab fa-linkedin-in" />
             </a>
             <a href="https://leetcode.com/u/SANJAYKUMAR_24CSR264/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LeetCode">
-              <img src="https://cdn.simpleicons.org/leetcode/ffffff" alt="LeetCode" style={{ width: '1.25em', height: '1.25em', objectFit: 'contain' }} />
+              <img src="https://cdn.simpleicons.org/leetcode/ffffff" alt="LeetCode" width="20" height="20" style={{ width: '1.25em', height: '1.25em', objectFit: 'contain' }} />
             </a>
           </m.div>
         </m.div>

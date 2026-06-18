@@ -122,7 +122,7 @@ export default function CertSwiper({ certs = [] }) {
                       <span className="cert-scard-issuer">{cert.issuer}</span>
                     </div>
                     <div className="cert-scard-body">
-                      <img src={cert.image} alt={cert.title} loading="lazy" className="cert-img-preview" draggable="false" />
+                      <img src={cert.image} alt={cert.title} loading="lazy" className="cert-img-preview" draggable="false" width="600" height="450" />
                     </div>
                   </div>
                 </m.div>
@@ -177,7 +177,7 @@ export default function CertSwiper({ certs = [] }) {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="cert-modal-img-wrap">
-                  <img src={modalImage} alt="Full size certificate" className="cert-modal-img" />
+                  <img src={modalImage} alt="Full size certificate" className="cert-modal-img" width="1200" height="900" />
                 </div>
                 <a href={modalImage} download className="cert-download-btn">
                   <i className="fas fa-download" /> Download

@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="footer-top">
         
         <div className="ft-col">
-          <img src="/logo.png" alt="Sanjaykumar Logo" className="ft-logo-img" style={{ height: '64px', width: 'max-content', objectFit: 'contain', mixBlendMode: 'screen', marginBottom: '12px' }} />
+          <p className="ft-name">Sanjaykumar D K</p>
           <p className="ft-bio">Full Stack Developer..</p>
           
           <h4 className="ft-col-heading">Contact Info</h4>
@@ -67,7 +67,7 @@ export default function Footer() {
                 {s.icon ? (
                   <i className={s.icon} />
                 ) : (
-                  <img src={s.img} alt={s.label} style={{ width: '1.1em', height: '1.1em', objectFit: 'contain' }} />
+                  <img src={s.img} alt={s.label} width="18" height="18" style={{ width: '1.1em', height: '1.1em', objectFit: 'contain' }} />
                 )}
               </m.a>
             ))}
