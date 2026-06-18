@@ -26,7 +26,13 @@
   --t-slow: 350ms ease;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; background-color: #000000; }
+html { 
+  scroll-behavior: smooth; 
+  font-size: 16px; 
+  background-color: #000000; 
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -196,8 +202,6 @@ img    { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  html { font-size: 15px; }
-
   body {
     font-size: 1rem;
     line-height: 1.65;
@@ -237,8 +241,6 @@ img    { max-width: 100%; display: block; }
 }
 
 @media (max-width: 480px) {
-  html { font-size: 14px; }
-
   .container {
     padding: 0 14px;
   }

@@ -6,9 +6,11 @@
   transition: background var(--t-slow), border-color var(--t-slow), padding var(--t-slow);
 }
 .navbar.scrolled {
-  background: rgba(10,10,10,0.92);
+  background: rgba(10,10,10,0.85);
   border-bottom: 1px solid var(--div);
   padding: 14px 0;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 .nav-inner {
   max-width: 1160px;

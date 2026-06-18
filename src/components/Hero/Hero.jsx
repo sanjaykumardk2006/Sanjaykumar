@@ -25,6 +25,13 @@ const AudioSpectrum = () => {
     setTimeout(handleResize, 0)
 
     let animationId
+    let isVisible = true
+
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting
+    }, { rootMargin: "100px" })
+    observer.observe(canvas)
+
     let time = 0
 
     const numBars = 100
@@ -48,6 +55,11 @@ const AudioSpectrum = () => {
     }
 
     const render = () => {
+      if (!isVisible) {
+        animationId = requestAnimationFrame(render)
+        return
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
       const cx = canvas.width / 2
@@ -111,6 +123,7 @@ const AudioSpectrum = () => {
     
     return () => {
       window.removeEventListener('resize', handleResize)
+      observer.disconnect()
       cancelAnimationFrame(animationId)
     }
   }, [])

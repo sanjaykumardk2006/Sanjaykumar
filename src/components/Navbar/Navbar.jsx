@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { m, useScroll, useTransform, useMotionTemplate } from 'framer-motion'
+import { m, useScroll, useMotionValueEvent } from 'framer-motion'
 import './Navbar.css'
 
 const links = [
@@ -15,14 +15,11 @@ export default function Navbar() {
   const [active,   setActive]   = useState('home')
 
   const { scrollY } = useScroll()
+  const [isScrolled, setIsScrolled] = useState(false)
   
-  // Transform values based on scroll
-  const navPadding = useTransform(scrollY, [0, 80], ['20px 0', '14px 0'])
-  const navBgOpacity = useTransform(scrollY, [0, 80], [0, 0.92])
-  const blurValue = useTransform(scrollY, [0, 80], [0, 16])
-  
-  const navBackground = useMotionTemplate`rgba(10, 10, 10, ${navBgOpacity})`
-  const navBackdropFilter = useMotionTemplate`blur(${blurValue}px)`
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 50)
+  })
 
   // Track active section
   useEffect(() => {
@@ -68,16 +65,10 @@ export default function Navbar() {
 
   return (
     <m.nav 
-      className="navbar"
+      className={`navbar${isScrolled ? ' scrolled' : ''}`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      style={{
-        padding: navPadding,
-        background: navBackground,
-        backdropFilter: navBackdropFilter,
-        borderBottom: useTransform(scrollY, [0, 80], ['1px solid transparent', '1px solid rgba(255,255,255,0.08)'])
-      }}
     >
       <div className="nav-inner">
         <a href="#home" className="nav-logo" onClick={e => handleClick(e, '#home')}>
