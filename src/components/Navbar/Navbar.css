@@ -21,15 +21,21 @@
   justify-content: space-between;
 }
 .nav-logo {
-  font-family: var(--font-head);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--t1);
-  letter-spacing: 0.04em;
-  transition: color var(--t-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.nav-logo:hover { color: var(--hv-clr); }
-.logo-dot { color: var(--t3); }
+.nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--t-fast), filter var(--t-fast);
+  mix-blend-mode: screen; /* Drops black background if any */
+}
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
 .nav-menu {
   display: flex;
   align-items: center;
@@ -70,7 +76,7 @@
   display: none;
   flex-direction: column;
   gap: 5px;
-  padding: 4px;
+  padding: 12px;
   background: none; border: none; cursor: pointer;
   z-index: 1001;
 }

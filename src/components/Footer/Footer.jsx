@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="footer-top">
         
         <div className="ft-col">
-          <p className="ft-name">Sanjaykumar D K</p>
+          <img src="/logo.png" alt="Sanjaykumar Logo" className="ft-logo-img" style={{ height: '64px', width: 'max-content', objectFit: 'contain', mixBlendMode: 'screen', marginBottom: '12px' }} />
           <p className="ft-bio">Full Stack Developer..</p>
           
           <h4 className="ft-col-heading">Contact Info</h4>
