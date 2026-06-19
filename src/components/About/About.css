@@ -174,6 +174,9 @@
   .bento-small {
     grid-column: span 2;
   }
+  .about-bio {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -192,6 +195,16 @@
   }
   .bento-card {
     padding: 20px;
+  }
+  .about-bio {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .bento-title {
+    font-size: 1.25rem;
+  }
+  .bento-desc {
+    font-size: 0.85rem;
   }
 }
 

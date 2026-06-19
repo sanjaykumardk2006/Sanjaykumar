@@ -211,10 +211,6 @@ const RotatingRole = () => {
 }
 
 export default function Hero() {
-  useEffect(() => {
-    // Spotlight is now global in App.jsx
-  }, [])
-
   const scrollTo = (e, href) => {
     e.preventDefault()
     const target = document.querySelector(href)
@@ -237,7 +233,7 @@ export default function Hero() {
           animate="visible"
         >
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
-          <m.h1 variants={itemVariants} className="hero-name">Sanjaykumar <span>D K</span></m.h1>
+          <m.h1 variants={itemVariants} className="hero-name">Sanjaykumar <span style={{ whiteSpace: 'nowrap' }}>D&nbsp;K</span></m.h1>
           <m.div variants={itemVariants}>
             <RotatingRole />
           </m.div>
