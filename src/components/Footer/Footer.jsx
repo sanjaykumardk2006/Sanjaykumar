@@ -10,7 +10,7 @@ const quickLinks = [
 
 const socials = [
   { href: 'https://github.com/sanjaykumardk2006', icon: 'fab fa-github',     id: 'ft-github',   label: 'GitHub'   },
-  { href: 'https://www.linkedin.com/in/sanjay-kumar-16b75b334/', icon: 'fab fa-linkedin-in', id: 'ft-linkedin', label: 'LinkedIn' },
+  { href: 'https://www.linkedin.com/in/sanjaykumar-d-k-16b75b334/', icon: 'fab fa-linkedin-in', id: 'ft-linkedin', label: 'LinkedIn' },
   { href: 'https://leetcode.com/u/SANJAYKUMAR_24CSR264/', img: 'https://cdn.simpleicons.org/leetcode/ffffff', id: 'ft-leetcode', label: 'LeetCode' },
 ]
 

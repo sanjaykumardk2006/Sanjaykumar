@@ -296,7 +296,7 @@ export default function Hero() {
             <a href="https://github.com/sanjaykumardk2006" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
               <i className="fab fa-github" />
             </a>
-            <a href="https://www.linkedin.com/in/sanjay-kumar-16b75b334/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/sanjaykumar-d-k-16b75b334/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
               <i className="fab fa-linkedin-in" />
             </a>
             <a href="https://leetcode.com/u/SANJAYKUMAR_24CSR264/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LeetCode">
