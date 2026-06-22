@@ -9,6 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LazyMotion features={domAnimation}>
       <App />
+      <SpeedInsights />
     </LazyMotion>
   </React.StrictMode>
 )
