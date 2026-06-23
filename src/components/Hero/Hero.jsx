@@ -92,7 +92,7 @@ const AudioSpectrum = () => {
         ctx.moveTo(innerX, innerY)
         ctx.lineTo(outerX, outerY)
         ctx.lineWidth = canvas.width * 0.006 // Thick bars
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)'
+        ctx.strokeStyle = '#FFFFFF'
         ctx.stroke()
       }
       
@@ -112,7 +112,7 @@ const AudioSpectrum = () => {
         
         ctx.beginPath()
         ctx.arc(px, py, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`
+        ctx.fillStyle = '#FFFFFF'
         ctx.fill()
       }
 
