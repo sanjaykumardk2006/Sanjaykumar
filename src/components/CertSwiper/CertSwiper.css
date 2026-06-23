@@ -294,8 +294,9 @@
   }
 
   .cert-stacked-card-wrapper {
-    max-width: min(92vw, 360px);
-    height: min(48vw + 100px, 270px);
+    width: 92vw;
+    max-width: 400px;
+    height: 270px;
   }
 
   .cert-scard-title {
@@ -319,12 +320,14 @@
 
 @media (max-width: 480px) {
   .cert-deck-container {
-    height: min(50vw + 100px, 260px);
+    height: 280px;
+    width: 100%;
   }
 
   .cert-stacked-card-wrapper {
-    max-width: 100%;
-    height: min(46vw + 90px, 220px);
+    max-width: 90vw;
+    width: 90vw;
+    height: 220px;
   }
 
   .cert-active-info {
