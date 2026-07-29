@@ -21,9 +21,9 @@
   --r-lg: 18px;
   --r-xl: 24px;
     --section-py: 40px;
-    --t-fast: 150ms ease;
-  --t-base: 250ms ease;
-  --t-slow: 350ms ease;
+  --t-fast: 250ms ease-in-out;
+  --t-base: 400ms ease-in-out;
+  --t-slow: 600ms ease-in-out;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { 

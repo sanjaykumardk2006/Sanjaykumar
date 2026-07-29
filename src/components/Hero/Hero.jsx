@@ -42,15 +42,32 @@ const AudioSpectrum = () => {
       speed: Math.random() * 0.1 + 0.05
     }))
 
+    const isMobile = window.innerWidth <= 768
+    const dotCount = isMobile ? 25 : 55
+
     const particles = []
-    for (let i = 0; i < 90; i++) {
+    for (let i = 0; i < dotCount; i++) {
+      // Evenly distribute dots around the circle to prevent empty gaps
+      const baseAngle = (i / dotCount) * Math.PI * 2
+      const jitter = (Math.random() - 0.5) * (Math.PI * 2 / dotCount) * 0.8
+      
       particles.push({
-        angle: Math.random() * Math.PI * 2,
-        distOffset: Math.random() * 40,
-        size: Math.random() * 1.2 + 0.5,
-        alpha: Math.random() * 0.8 + 0.2,
-        alphaTarget: Math.random() * 0.8 + 0.2,
-        alphaSpeed: Math.random() * 0.02 + 0.01,
+        angle: baseAngle + jitter,
+        baseDistOffset: Math.random() * 40 + 15, // Push them noticeably further from the ring
+        currentDistOffset: 0, // Start at the ring for intro animation
+        size: Math.random() * 1.5 + 1.0,
+        alpha: isMobile ? 1.0 : Math.random() * 0.5 + 0.5,
+        alphaTarget: isMobile ? 1.0 : Math.random() * 0.5 + 0.5,
+        alphaSpeed: isMobile ? 0 : Math.random() * 0.01 + 0.005,
+        // Sine wave based wandering
+        timeX: Math.random() * Math.PI * 2,
+        timeY: Math.random() * Math.PI * 2,
+        speedX: Math.random() * 0.02 + 0.005,
+        speedY: Math.random() * 0.02 + 0.005,
+        ampX: Math.random() * 15 + 10, // Allow more wandering space
+        ampY: Math.random() * 15 + 10, // Allow more wandering space
+        // Extremely slow orbit just to keep the whole cloud rotating
+        angularSpeed: (Math.random() > 0.5 ? 1 : -1) * 0.0005,
       })
     }
 
@@ -98,21 +115,37 @@ const AudioSpectrum = () => {
       
       // Draw Particles (dots)
       for (let p of particles) {
-        if (Math.abs(p.alpha - p.alphaTarget) < 0.02) {
-          p.alphaTarget = Math.random() * 0.8 + 0.2
-          p.alphaSpeed = Math.random() * 0.02 + 0.01
+        if (Math.abs(p.alpha - p.alphaTarget) < 0.02 && !isMobile) {
+          p.alphaTarget = Math.random() * 0.5 + 0.5
+          p.alphaSpeed = Math.random() * 0.01 + 0.005
         }
         p.alpha += (p.alphaTarget - p.alpha) * p.alphaSpeed
         
-        // Particles sit around and just outside the bars
-        const pRadius = baseRadius + (canvas.width * 0.01) + p.distOffset
+        // Guaranteed smooth organic movement using sine waves
+        p.timeX += p.speedX
+        p.timeY += p.speedY
         
-        const px = cx + Math.cos(p.angle) * pRadius
-        const py = cy + Math.sin(p.angle) * pRadius
+        p.xOffset = Math.sin(p.timeX) * p.ampX
+        p.yOffset = Math.cos(p.timeY) * p.ampY
+
+        // Very slow global rotation
+        p.angle += p.angularSpeed
+        
+        // Animate outward from the ring on load (slowed down for majestic bloom effect)
+        if (p.currentDistOffset < p.baseDistOffset - 0.1) {
+          p.currentDistOffset += (p.baseDistOffset - p.currentDistOffset) * 0.015
+        } else {
+          p.currentDistOffset = p.baseDistOffset
+        }
+        
+        const pRadius = baseRadius + (canvas.width * 0.01) + p.currentDistOffset
+        
+        const px = cx + Math.cos(p.angle) * pRadius + p.xOffset
+        const py = cy + Math.sin(p.angle) * pRadius + p.yOffset
         
         ctx.beginPath()
         ctx.arc(px, py, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = '#FFFFFF'
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`
         ctx.fill()
       }
 
@@ -291,7 +324,7 @@ export default function Hero() {
             style={{ marginTop: '100px' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
+            transition={{ delay: 0.5, duration: 1.0, ease: "easeOut" }}
           >
             <a href="https://github.com/sanjaykumardk2006" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
               <i className="fab fa-github" />

@@ -3,6 +3,15 @@ import './Projects.css'
 
 const projects = [
   {
+    id: 'proj-flame',
+    title: 'Advance Flame Sensing Unit',
+    desc: 'Implemented a smart fire monitoring solution that provides real-time fire detection, automated alert generation, and emergency communication. The system enhances safety by combining sensor-based detection with instant notifications and rapid response mechanisms.',
+    tags: ['IoT', 'Sensors', 'Real-time', 'Alerts'],
+    liveUrl: '#',
+    githubUrl: 'https://github.com/sanjaykumardk2006/Fire-Alarm',
+    features: ['Real-time Detection', 'Automated Alerts', 'Emergency Communication', 'Rapid Response']
+  },
+  {
     id: 'proj-freelancer',
     title: 'Freelancer Marketplace',
     icon: 'fa-solid fa-bullseye', // similar to the "purpose" target icon
@@ -23,15 +32,6 @@ const projects = [
     liveUrl: '#',
     githubUrl: 'https://github.com/sanjaykumardk2006/Water-Treatment-Analysis',
     features: ['94% Accuracy Model', 'Random Forest Classifier', 'Interactive Dashboard', 'Data Visualization']
-  },
-  {
-    id: 'proj-flame',
-    title: 'Advance Flame Sensing Unit',
-    desc: 'Implemented a smart fire monitoring solution that provides real-time fire detection, automated alert generation, and emergency communication. The system enhances safety by combining sensor-based detection with instant notifications and rapid response mechanisms.',
-    tags: ['IoT', 'Sensors', 'Real-time', 'Alerts'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/sanjaykumardk2006/Fire-Alarm',
-    features: ['Real-time Detection', 'Automated Alerts', 'Emergency Communication', 'Rapid Response']
   }
 ]
 

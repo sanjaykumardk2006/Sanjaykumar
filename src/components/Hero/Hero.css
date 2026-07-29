@@ -75,7 +75,7 @@
 .social-link {
   display: flex; align-items: center; justify-content: center;
   font-size: 2rem; color: rgba(255, 255, 255, 0.65);
-  transition: all var(--t-base);
+  transition: all 400ms ease;
 }
 .social-link:hover {
   color: #ffffff;
@@ -83,7 +83,7 @@
 }
 .social-link img {
   opacity: 0.65;
-  transition: opacity var(--t-base);
+  transition: opacity 400ms ease;
 }
 .social-link:hover img {
   opacity: 1;
