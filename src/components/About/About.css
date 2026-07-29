@@ -26,9 +26,9 @@
   width: 100%;
 }
 .about-bio {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   color: var(--t2);
-  line-height: 1.8;
+  line-height: 1.65;
   text-align: left;
 }
 .tech-stack-section {
@@ -175,7 +175,7 @@
     grid-column: span 2;
   }
   .about-bio {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -197,7 +197,7 @@
     padding: 20px;
   }
   .about-bio {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.6;
   }
   .bento-title {
