@@ -34,16 +34,17 @@ const AudioSpectrum = () => {
 
     let time = 0
 
+    const isMobile = window.innerWidth <= 768
+    const dotCount = isMobile ? 25 : 55
+    const barSpeedMult = isMobile ? 0.5 : 1.0 // Slow down bars on high-refresh-rate mobile screens
+
     const numBars = 100
     const bars = Array.from({ length: numBars }, (_, i) => ({
       angle: (i / numBars) * Math.PI * 2,
       currentHeight: 0,
       targetHeight: 0,
-      speed: Math.random() * 0.1 + 0.05
+      speed: (Math.random() * 0.1 + 0.05) * barSpeedMult
     }))
-
-    const isMobile = window.innerWidth <= 768
-    const dotCount = isMobile ? 25 : 55
 
     const particles = []
     for (let i = 0; i < dotCount; i++) {
@@ -93,7 +94,7 @@ const AudioSpectrum = () => {
           bar.targetHeight = Math.random() > 0.75 
             ? Math.random() * (canvas.width * 0.06) 
             : Math.random() * (canvas.width * 0.02)
-          bar.speed = Math.random() * 0.1 + 0.05
+          bar.speed = (Math.random() * 0.1 + 0.05) * barSpeedMult
         }
         
         bar.currentHeight += (bar.targetHeight - bar.currentHeight) * bar.speed
@@ -108,7 +109,7 @@ const AudioSpectrum = () => {
         ctx.beginPath()
         ctx.moveTo(innerX, innerY)
         ctx.lineTo(outerX, outerY)
-        ctx.lineWidth = canvas.width * 0.006 // Thick bars
+        ctx.lineWidth = Math.max(1.5, canvas.width * 0.006) // Ensure it doesn't get too thin and look faded on mobile
         ctx.strokeStyle = '#FFFFFF'
         ctx.stroke()
       }
