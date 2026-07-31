@@ -117,6 +117,7 @@
 .pg-btn:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
 }
 
 .pg-btn-primary {
