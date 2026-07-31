@@ -76,6 +76,13 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-weight: 500;
   font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+.pg-tags span:hover {
+  border-color: #ffffff;
+  transform: translateY(-4px);
+  color: #ffffff;
 }
 
 .pg-card-bottom {
