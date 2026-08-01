@@ -148,4 +148,4 @@ Typical deployment flow:
 
 - The contact form depends on EmailJS credentials configured in `src/components/Contact/Contact.jsx`.
 - The resume link points to `/resume.pdf`, so the file should be available in the public folder.
-- The project uses Vite's default static asset handling
+- The project uses Vite's default static asset handling.
