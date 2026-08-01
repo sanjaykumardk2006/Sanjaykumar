@@ -142,7 +142,7 @@ Typical deployment flow:
 1. Push code to GitHub
 2. Connect the repository to Vercel
 3. Deploy automatically
-4. The frontend is served as a static site
+4. The frontend is served as a static
 
 ## 10. Notes
 
