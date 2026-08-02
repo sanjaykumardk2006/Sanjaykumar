@@ -139,7 +139,7 @@ npm run preview
 The project is configured for Vercel deployment using `vercel.json`.
 
 Typical deployment flow:
-1. Push code to GitHub
+1. Push code to Gi
 2. Connect the repository to Vercel
 3. Deploy automatically
 4. The frontend is served as a static site
