@@ -63,7 +63,7 @@ index.html
 
 ### Extra UI Enhancements
 - Smooth scrolling with Lenis
-- Animated transitions with 
+- Animated transitions with Fr
 - Scroll progress indicator
 - Back-to-top button
 - Cursor spotlight effect on pointer devices
