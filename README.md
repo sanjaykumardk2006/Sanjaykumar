@@ -49,7 +49,7 @@ index.html
 - Uses Framer Motion for entrance animations.
 
 ### About Section
-- Shows the personal bio and the technology sta
+- Shows the personal bio and the technology stac
 - Displays categories such as frontend, backend, databases, and tools.
 
 ### Projects Section
