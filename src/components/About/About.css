@@ -65,7 +65,7 @@
 /* Bento Grid Layout */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
   width: 100%;
 }
@@ -88,11 +88,11 @@
 }
 
 .bento-large {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .bento-medium {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 
 .bento-small {
@@ -209,5 +209,5 @@
 }
 
 #about {
-  margin-bottom: 80px;
+  /* margin removed to fix empty space */
 }
