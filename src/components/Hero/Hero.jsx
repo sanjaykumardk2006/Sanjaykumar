@@ -206,25 +206,7 @@ const buttonVariants = {
   }
 }
 
-const FlipRole = () => {
-  const [index, setIndex] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % 2)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <div className="hero-role" style={{ display: 'flex', alignItems: 'center', gap: '8px', minHeight: '32px' }}>
-      <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27C93F', boxShadow: '0 0 8px rgba(39, 201, 63, 0.6)', flexShrink: 0 }}></span>
-      <FlipText key={index}>
-        {index === 0 ? "Aspiring Full Stack Developer" : "Available for Work"}
-      </FlipText>
-    </div>
-  )
-}
 
 export default function Hero() {
   const scrollTo = (e, href) => {
@@ -250,8 +232,9 @@ export default function Hero() {
         >
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
           <m.h1 variants={itemVariants} className="hero-name">Sanjaykumar <span style={{ whiteSpace: 'nowrap' }}>D&nbsp;K</span></m.h1>
-          <m.div variants={itemVariants}>
-            <FlipRole />
+          <m.div variants={itemVariants} className="hero-role" style={{ display: 'flex', alignItems: 'center', gap: '8px', minHeight: '32px' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27C93F', boxShadow: '0 0 8px rgba(39, 201, 63, 0.6)', flexShrink: 0 }}></span>
+            <FlipText loop={true} duration={3.2}>Aspiring Full Stack Developer</FlipText>
           </m.div>
           <m.p variants={itemVariants} className="hero-description">
             Passionate about building modern, responsive web applications and creating seamless user experiences. I enjoy developing scalable solutions with clean and efficient code while continuously learning new technologies.

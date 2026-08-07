@@ -53,9 +53,9 @@ export function FlipText({
                                     className="flip-char inline-block relative"
                                     data-char={char}
                                     style={{
-                                        "--flip-duration": `${duration}s`,
-                                        "--flip-delay": `${calculatedDelay}s`,
-                                        "--flip-iteration": loop ? "infinite" : "1",
+                                        animationDuration: `${duration}s`,
+                                        animationDelay: `${calculatedDelay}s`,
+                                        animationIterationCount: loop ? "infinite" : 1,
                                         transformStyle: "preserve-3d",
                                     }}
                                 >
