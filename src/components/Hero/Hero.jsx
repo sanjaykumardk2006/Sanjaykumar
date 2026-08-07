@@ -238,7 +238,7 @@ export default function Hero() {
             <FlipText loop={true} duration={3.2}>Aspiring Full Stack Developer</FlipText>
           </m.div>
           <m.p variants={itemVariants} className="hero-description">
-            Passionate about building modern, responsive web applications and creating seamless user experiences. I enjoy developing scalable solutions with clean and efficient code while continuously learning new technologies.
+            Creating modern, scalable web applications with clean, efficient code. Driven by continuous learning and a passion for solving real-world problems through technology.
           </m.p>
 
           <m.div variants={buttonVariants} className="hero-actions">

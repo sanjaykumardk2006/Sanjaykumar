@@ -59,9 +59,9 @@ export default function Qualifications() {
           >
             <div className="intern-header-row">
               <div className="intern-company-block">
-                <h3 className="intern-company-name">Coptercode</h3>
+                <h3 className="intern-company-name">Full Stack Developer Intern</h3>
                 <p className="intern-role-line">
-                  Full Stack Developer
+                  Coptercode
                   <span className="intern-sep">·</span>
                   Jan 2026
                   <span className="remote-badge">
