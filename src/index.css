@@ -39,7 +39,7 @@ body {
   color: var(--t1);
   line-height: 1.7;
   font-size: 1.4rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

@@ -9,6 +9,7 @@
   transform-origin: 50% 50%;
   backface-visibility: hidden;
   display: inline-block;
+  will-change: transform, opacity;
 }
 
 @keyframes flip-char-anim {

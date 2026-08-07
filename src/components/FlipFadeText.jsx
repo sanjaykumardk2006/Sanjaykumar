@@ -10,7 +10,7 @@ const Letter = memo(function Letter({
 }) {
     return (
         <motion.span
-            style={{ transformStyle: "preserve-3d", display: 'inline-block', whiteSpace: 'pre' }}
+            style={{ transformStyle: "preserve-3d", display: 'inline-block', whiteSpace: 'pre', willChange: 'transform, filter, opacity' }}
             variants={{
                 initial: {
                     rotateX: 90,
