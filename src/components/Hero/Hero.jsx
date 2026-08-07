@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { m, AnimatePresence } from 'framer-motion'
+import AnimatedButton from '../AnimatedButton'
 import './Hero.css'
 
 const AudioSpectrum = () => {
@@ -276,7 +277,8 @@ export default function Hero() {
           </m.p>
 
           <m.div variants={buttonVariants} className="hero-actions">
-            <m.a
+            <AnimatedButton
+              as="a"
               href="#projects"
               className="btn btn-primary"
               id="btn-view-projects"
@@ -284,15 +286,16 @@ export default function Hero() {
               whileHover={{ 
                 scale: 1.05, 
                 y: -4,
-                boxShadow: '0 12px 30px rgba(255, 255, 255, 0.2), 0 0 24px rgba(59, 130, 246, 0.4)'
+                boxShadow: '0 0 24px rgba(59, 130, 246, 0.4)'
               }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               style={{ background: '#ffffff', color: '#000000', borderColor: '#ffffff' }}
             >
               Track Projects
-            </m.a>
-            <m.a
+            </AnimatedButton>
+            <AnimatedButton
+              as="a"
               href="/resume.pdf"
               className="btn btn-ghost"
               id="btn-resume"
@@ -301,13 +304,13 @@ export default function Hero() {
               whileHover={{ 
                 scale: 1.05, 
                 y: -4,
-                boxShadow: '0 12px 30px rgba(255, 255, 255, 0.1), inset 0 0 16px rgba(59, 130, 246, 0.25)'
+                boxShadow: 'inset 0 0 16px rgba(59, 130, 246, 0.25)'
               }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <i className="fas fa-eye" /> View Resume
-            </m.a>
+            </AnimatedButton>
           </m.div>
         </m.div>
 

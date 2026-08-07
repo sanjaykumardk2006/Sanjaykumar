@@ -1,0 +1,43 @@
+.animated-button {
+  --shine: rgba(255, 255, 255, 0.66);
+  position: relative;
+  overflow: hidden;
+  /* Basic resets so it integrates well with existing buttons */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+/* Specific overrides for light backgrounds to ensure shine is visible */
+.animated-button.btn-primary {
+  --shine: rgba(0, 0, 0, 0.4);
+}
+
+/* Remove the default fade-to-white hover background from global button classes */
+.animated-button.btn-ghost:hover {
+  background: transparent !important;
+}
+.animated-button.btn-primary:hover {
+  background: #ffffff !important;
+}
+
+.animated-button-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  gap: 8px; /* For icons */
+}
+
+.animated-button-border {
+  display: block;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+}
