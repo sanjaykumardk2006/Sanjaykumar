@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-import { m, AnimatePresence } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { m } from 'framer-motion'
 import AnimatedButton from '../AnimatedButton'
 import FlipText from '../FlipText'
 import FlipFadeText from '../FlipFadeText'
@@ -34,8 +34,6 @@ const AudioSpectrum = () => {
       isVisible = entry.isIntersecting
     }, { rootMargin: "100px" })
     observer.observe(canvas)
-
-    let time = 0
 
     const isMobile = window.innerWidth <= 768
     const dotCount = isMobile ? 25 : 55

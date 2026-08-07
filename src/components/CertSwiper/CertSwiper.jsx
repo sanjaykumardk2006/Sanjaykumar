@@ -80,8 +80,6 @@ export default function CertSwiper({ certs = [] }) {
 
               const stackLayouts = isMobile ? MOBILE_STACK : DESKTOP_STACK
               const layout = stackLayouts[distanceFromActive] ?? stackLayouts[0]
-              const jitterScale = isMobile ? 0.45 : 1
-              const jitter = (((idx * 11 + activeIndex * 7) % 9) - 4) * jitterScale
 
               return (
                 <m.div

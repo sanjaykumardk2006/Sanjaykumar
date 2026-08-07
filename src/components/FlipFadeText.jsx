@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useCallback, memo } from "react"
+import { useEffect, useState, useMemo, useCallback, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const defaultWords = ["LOADING", "COMPUTING", "SEARCHING", "RETRIEVING", "ASSEMBLING"]
