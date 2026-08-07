@@ -65,7 +65,7 @@ export default function Qualifications() {
                   <span className="intern-sep">·</span>
                   Jan 2026
                   <span className="remote-badge">
-                    <span className="remote-dot"></span> Remote
+                    <span className="remote-dot"></span> Hybrid
                   </span>
                 </p>
               </div>
