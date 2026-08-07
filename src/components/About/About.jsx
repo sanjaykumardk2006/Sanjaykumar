@@ -93,12 +93,7 @@ export default function About() {
           <div className="about-layout">
             <div className="about-right">
               <p className="about-bio">
-                I am passionate about full-stack web development and enjoy
-                building modern, responsive, and user-friendly web applications.
-                With hands-on experience in React, JavaScript, and database technologies,
-                I focus on creating efficient and impactful digital solutions. My internship
-                experience allowed me to work on real-world projects and strengthen my
-                problem-solving abilities.
+                Aspiring Full Stack Developer focused on building responsive, scalable, and user-centric web applications. Passionate about clean code, modern technologies, and solving real-world problems through innovative software solutions. Continuously learning, improving, and striving to create impactful digital experiences.
               </p>
             </div>
           </div>
