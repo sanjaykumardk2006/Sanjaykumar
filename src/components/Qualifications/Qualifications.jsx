@@ -74,10 +74,9 @@ export default function Qualifications() {
             <div className="intern-content">
               <div className="intern-block">
                 <ul className="intern-list">
-                  <li>Developed full-stack web applications using modern frontend and backend technologies.</li>
-                  <li>Designed responsive and user-friendly interfaces to enhance user experience.</li>
-                  <li>Integrated APIs, databases, and CMS solutions (Sanity) for dynamic content management.</li>
-                  <li>Participated in deployment workflows and maintained scalable, efficient code structures.</li>
+                  <li>Built scalable full-stack web applications using modern technologies.</li>
+                  <li>Integrated APIs, databases, and Sanity CMS to power dynamic web applications.</li>
+                  <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
                 </ul>
               </div>
             </div>
