@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { m, AnimatePresence } from 'framer-motion'
 import AnimatedButton from '../AnimatedButton'
+import FlipText from '../FlipText'
 import './Hero.css'
 
 const AudioSpectrum = () => {
@@ -205,42 +206,22 @@ const buttonVariants = {
   }
 }
 
-const ROLES = [
-  "Aspiring Full Stack Developer",
-  "Available for Work"
-]
-
-const RotatingRole = () => {
+const FlipRole = () => {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % ROLES.length)
-    }, 2500)
+      setIndex((prev) => (prev + 1) % 2)
+    }, 3000)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <div className="hero-role" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Invisible placeholder to maintain proper layout height */}
-      <div style={{ opacity: 0, pointerEvents: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <span style={{ width: '8px', height: '8px', borderRadius: '50%' }}></span>
-        Aspiring Full Stack Developer
-      </div>
-      
-      <AnimatePresence>
-        <m.div
-          key={index}
-          initial={{ y: 25, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -25, opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'inherit', color: '#ffffff', whiteSpace: 'nowrap', gap: '8px' }}
-        >
-          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27C93F', boxShadow: '0 0 8px rgba(39, 201, 63, 0.6)' }}></span>
-          {ROLES[index]}
-        </m.div>
-      </AnimatePresence>
+    <div className="hero-role" style={{ display: 'flex', alignItems: 'center', gap: '8px', minHeight: '32px' }}>
+      <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27C93F', boxShadow: '0 0 8px rgba(39, 201, 63, 0.6)', flexShrink: 0 }}></span>
+      <FlipText key={index}>
+        {index === 0 ? "Aspiring Full Stack Developer" : "Available for Work"}
+      </FlipText>
     </div>
   )
 }
@@ -270,7 +251,7 @@ export default function Hero() {
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
           <m.h1 variants={itemVariants} className="hero-name">Sanjaykumar <span style={{ whiteSpace: 'nowrap' }}>D&nbsp;K</span></m.h1>
           <m.div variants={itemVariants}>
-            <RotatingRole />
+            <FlipRole />
           </m.div>
           <m.p variants={itemVariants} className="hero-description">
             Passionate about building modern, responsive web applications and creating seamless user experiences. I enjoy developing scalable solutions with clean and efficient code while continuously learning new technologies.
