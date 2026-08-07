@@ -233,7 +233,7 @@ export default function Hero() {
           <m.h1 variants={itemVariants} className="hero-name">
             <FlipFadeText words={["Sanjaykumar D K"]} textClassName="hero-name" staggerDelay={0.05} letterDuration={0.5} />
           </m.h1>
-          <m.div variants={itemVariants} className="hero-role" style={{ display: 'flex', alignItems: 'center', gap: '8px', minHeight: '32px' }}>
+          <m.div variants={itemVariants} className="hero-role" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', minHeight: '32px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27C93F', boxShadow: '0 0 8px rgba(39, 201, 63, 0.6)', flexShrink: 0 }}></span>
             <FlipText loop={true} duration={3.2}>Aspiring Full Stack Developer</FlipText>
           </m.div>
