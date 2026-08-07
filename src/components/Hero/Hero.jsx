@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { m, AnimatePresence } from 'framer-motion'
 import AnimatedButton from '../AnimatedButton'
 import FlipText from '../FlipText'
+import FlipFadeText from '../FlipFadeText'
 import './Hero.css'
 
 const AudioSpectrum = () => {
@@ -231,7 +232,9 @@ export default function Hero() {
           animate="visible"
         >
           <m.p variants={itemVariants} className="hero-greeting">Hi, I'm</m.p>
-          <m.h1 variants={itemVariants} className="hero-name">Sanjaykumar <span style={{ whiteSpace: 'nowrap' }}>D&nbsp;K</span></m.h1>
+          <m.h1 variants={itemVariants} className="hero-name">
+            <FlipFadeText words={["Sanjaykumar D K"]} textClassName="hero-name" staggerDelay={0.05} letterDuration={0.5} />
+          </m.h1>
           <m.div variants={itemVariants} className="hero-role" style={{ display: 'flex', alignItems: 'center', gap: '8px', minHeight: '32px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27C93F', boxShadow: '0 0 8px rgba(39, 201, 63, 0.6)', flexShrink: 0 }}></span>
             <FlipText loop={true} duration={3.2}>Aspiring Full Stack Developer</FlipText>
