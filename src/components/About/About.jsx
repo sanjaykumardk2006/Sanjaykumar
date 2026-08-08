@@ -43,7 +43,6 @@ const techCategories = [
     className: 'bento-large',
     techs: [
       { name: 'GitHub',     src: `${DEVICON}/github/github-original.svg`,        brand: '#FFFFFF', inv: true },
-      { name: 'Unity',      src: `${DEVICON}/unity/unity-original.svg`,          brand: '#FFFFFF', inv: true },
     ],
   },
 ]
