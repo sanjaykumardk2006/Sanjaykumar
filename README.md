@@ -45,7 +45,7 @@ index.html
 
 ### Hero Section
 - Displays the personal introduction and animated role text.
-- Includes social links for GitHub, LinkedIn, and Lee
+- Includes social links for GitHub, LinkedIn, and LeetC
 - Uses Framer Motion for entrance animations.
 
 ### About Section
