@@ -133,7 +133,7 @@
 }
 
 .pg-live-link {
-  color: #3b82f6;
+  color: #27c93f;
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -146,7 +146,7 @@
 }
 
 .pg-live-link:hover {
-  color: #60a5fa;
+  color: #4ade80;
   text-decoration: underline;
 }
 
