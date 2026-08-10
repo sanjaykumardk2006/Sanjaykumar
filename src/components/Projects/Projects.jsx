@@ -18,7 +18,7 @@ const projects = [
     desc: 'An online platform that connects businesses with independent professionals. Clients can easily post job openings with their specific needs and budgets, while freelancers can browse listings and apply. It simplifies the entire hiring process from reviewing proposals to assigning the final project.',
     image: '/proj-freelancer.png',
     tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
-    liveUrl: '#',
+    liveUrl: 'https://freelancer-sigma-ebon.vercel.app/',
     githubUrl: 'https://github.com/sanjaykumardk2006/FSD',
     features: ['Job Posting', 'Proposal Submission', 'Role-based Auth', 'Project Tracking']
   },
@@ -73,6 +73,12 @@ export default function Projects() {
                   <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="pg-btn pg-btn-primary">
                     <i className="fab fa-github" /> GitHub
                   </a>
+                  {p.liveUrl && p.liveUrl !== '#' && (
+                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="pg-live-link">
+                      <i className="fas fa-link" style={{ marginRight: '6px' }} />
+                      {p.liveUrl.replace(/^https?:\/\//, '')}
+                    </a>
+                  )}
                 </div>
               </div>
             </m.div>

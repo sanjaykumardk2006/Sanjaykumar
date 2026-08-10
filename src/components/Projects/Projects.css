@@ -94,7 +94,8 @@
 .pg-actions {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .pg-btn {
@@ -129,6 +130,24 @@
 .pg-btn-primary:hover {
   background: #e6e6e6;
   border-color: #e6e6e6;
+}
+
+.pg-live-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pg-live-link:hover {
+  color: #60a5fa;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
