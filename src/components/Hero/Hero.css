@@ -143,6 +143,10 @@
     margin-bottom: 6px;
   }
 
+  .hero-name {
+    justify-content: center;
+  }
+
   .hero-role {
     justify-content: center;
     margin-bottom: 28px;
