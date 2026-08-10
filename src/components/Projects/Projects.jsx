@@ -5,7 +5,7 @@ const projects = [
   {
     id: 'proj-flame',
     title: 'Advance Flame Sensing Unit',
-    desc: 'Implemented a smart fire monitoring solution that provides real-time fire detection, automated alert generation, and emergency communication. The system enhances safety by combining sensor-based detection with instant notifications and rapid response mechanisms.',
+    desc: 'A smart safety system that detects fires in real-time using advanced sensors. When a fire is spotted, it instantly sends automated alerts to emergency contacts to ensure a rapid response. This project helps prevent disasters by acting much faster than traditional alarms.',
     tags: ['IoT', 'Sensors', 'Real-time', 'Alerts'],
     liveUrl: '#',
     githubUrl: 'https://github.com/sanjaykumardk2006/Fire-Alarm',
@@ -15,7 +15,7 @@ const projects = [
     id: 'proj-freelancer',
     title: 'Freelancer Marketplace',
     icon: 'fa-solid fa-bullseye', // similar to the "purpose" target icon
-    desc: 'Developed a full-stack Freelancer Marketplace web application that connects clients and freelancers on a single platform. The system enables clients to post job opportunities with required skills, budget, experience, and deadlines, while freelancers can browse available jobs and submit proposals. Clients can review proposals, accept or reject them with feedback, and assign projects to suitable freelancers.',
+    desc: 'An online platform that connects businesses with independent professionals. Clients can easily post job openings with their specific needs and budgets, while freelancers can browse listings and apply. It simplifies the entire hiring process from reviewing proposals to assigning the final project.',
     image: '/proj-freelancer.png',
     tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     liveUrl: '#',
@@ -26,7 +26,7 @@ const projects = [
     id: 'proj-water',
     title: 'Water Quality Prediction',
     icon: 'fa-solid fa-eye', // similar to the "vision" eye icon
-    desc: 'Developed a Machine Learning-based water quality analysis system that automates the evaluation of sewage wastewater using key water parameters. The system calculates the Water Quality Index (WQI), classifies water quality into Good, Moderate, and Poor categories, and provides appropriate treatment recommendations to support effective water management and environmental sustainability.',
+    desc: 'An AI-powered tool designed to analyze and predict the safety of wastewater. It automatically tests key water properties to grade the water quality as Good, Moderate, or Poor. Based on these results, it recommends the best treatment methods to protect our environment.',
     image: '/proj-water.png',
     tags: ['Python', 'NumPy','Matplotlib', 'Pandas'],
     liveUrl: '#',
