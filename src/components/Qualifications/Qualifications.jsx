@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import CertSwiper from '../CertSwiper/CertSwiper'
+import CertStackCard from '../CertStackCard/CertStackCard'
 import './Qualifications.css'
 
 const certs = [
@@ -94,7 +94,10 @@ export default function Qualifications() {
             <span className="section-eyebrow">Certifications</span>
           </div>
           <div className="certs-showcase">
-            <CertSwiper certs={certs} />
+            <CertStackCard 
+              items={certs.map(c => ({ ...c, description: c.issuer }))} 
+              autoPlay={false}
+            />
           </div>
         </m.div>
       </div>

@@ -1,0 +1,140 @@
+.cert-stack-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.cert-stack-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem 2rem;
+  width: 100%;
+}
+
+.cert-stack-counter {
+  grid-row-start: 1;
+  text-align: right;
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: #a3a3a3;
+  z-index: 10;
+}
+
+.cert-stack-images {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.4 / 1;
+}
+
+.cert-stack-card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  background-color: #1a1a1a;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  border-radius: 0.75rem;
+}
+
+.cert-stack-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.cert-stack-text {
+  grid-column-start: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  position: relative;
+  z-index: 5;
+}
+
+.cert-stack-title {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.cert-stack-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #a3a3a3;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.cert-stack-nav {
+  grid-column-start: 1;
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem auto 0 auto;
+}
+
+.cert-stack-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.cert-stack-btn:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.cert-stack-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cert-stack-btn i {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .cert-stack-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .cert-stack-counter {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .cert-stack-images {
+    grid-row-start: 1;
+    grid-row-end: span 3;
+  }
+
+  .cert-stack-text {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .cert-stack-nav {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    margin: 1rem 0 0 0;
+  }
+}
