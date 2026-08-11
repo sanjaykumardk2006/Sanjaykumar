@@ -1306,7 +1306,7 @@ export function BooksShowcase({
 
   const themeVars = {
     '--bs-navy': 'var(--bg, #000000)',
-    '--bs-pink': 'var(--blue, #3B82F6)',
+    '--bs-pink': '#ffffff',
     '--bs-cream': 'var(--t1, #ffffff)',
     '--bs-lav': 'var(--t2, #cccccc)',
     '--bs-peri': 'var(--blue, #3B82F6)',
@@ -1383,18 +1383,7 @@ export function BooksShowcase({
           <p className={cn('bs-detail-desc', dpChild(130))}>
             {selectedCfg?.desc}
           </p>
-          <div className={cn('bs-detail-meta', dpChild(210))}>
-            <div className="bs-detail-meta-stars">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <svg key={i} viewBox="0 0 24 24" className={cn('bs-detail-meta-star', i < (selectedCfg?.stars ?? 0) ? '' : 'dim')}>
-                  <path d="M12 2.6l2.8 6 6.6.6-5 4.4 1.5 6.5L12 16.7 6.1 20.1l1.5-6.5-5-4.4 6.6-.6z" />
-                </svg>
-              ))}
-            </div>
-            <div className="bs-detail-meta-div" />
-            <div className="bs-detail-meta-text">Project</div>
-            <div className="bs-detail-meta-right bs-detail-meta-text">{selectedCfg?.year}</div>
-          </div>
+
           <div className={cn('bs-detail-divider', dpChild(270))} />
           <div className={cn('bs-detail-actions', dpChild(330))}>
             {selectedCfg?.liveUrl && selectedCfg.liveUrl !== '#' && (

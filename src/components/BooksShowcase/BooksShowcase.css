@@ -353,7 +353,7 @@
   align-items: center;
   gap: 10px;
   border-radius: 9999px;
-  background-color: #1a2140;
+  background-color: #000000;
   padding: 10px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
@@ -387,20 +387,20 @@
 }
 
 .bs-action-btn.primary {
-  background-color: var(--blue, #3B82F6);
-  color: #fff;
-  box-shadow: 0 4px 18px rgba(59,130,246,0.25);
+  background-color: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(22, 163, 74, 0.25);
 }
 
 .bs-action-btn.secondary {
-  background-color: transparent;
-  color: var(--t2, #ccc);
-  border: 1px solid var(--t3, #888);
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 .bs-action-btn.secondary:hover {
-  background-color: rgba(255,255,255,0.05);
-  color: #fff;
-  border-color: rgba(255,255,255,0.2);
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 .bs-action-btn.icon {
