@@ -176,3 +176,11 @@
   transform: translateY(-8px);
   box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.45);
 }
+
+@media (max-width: 768px) {
+  .projects-showcase-wrapper {
+    height: 85vh;
+    min-height: 480px;
+    border-radius: 16px;
+  }
+}
