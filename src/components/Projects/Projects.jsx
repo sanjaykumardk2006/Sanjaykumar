@@ -52,11 +52,11 @@ export default function Projects() {
         </m.div>
 
         <m.div 
+          className="projects-showcase-wrapper"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-          style={{ height: '80vh', minHeight: '600px', width: '100%', marginTop: '40px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
         >
           <BooksShowcase 
             books={projects.map(p => ({
