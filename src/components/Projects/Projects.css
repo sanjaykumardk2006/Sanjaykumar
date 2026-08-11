@@ -4,7 +4,7 @@
 
 .projects-header {
   text-align: left;
-  margin-bottom: 60px;
+  margin-bottom: 24px;
 }
 
 .projects-grid {
@@ -179,8 +179,8 @@
 
 @media (max-width: 768px) {
   .projects-showcase-wrapper {
-    height: 85vh;
-    min-height: 480px;
+    height: 65vh;
+    min-height: 420px;
     border-radius: 16px;
   }
 }

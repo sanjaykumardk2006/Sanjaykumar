@@ -690,14 +690,14 @@ export function BooksShowcase({
       const portrait = a < 0.85;
       const fit = portrait ? clamp(a / 1.08, 0.38, 0.74) : clamp(a / 1.62, 0.52, 1);
       bookRoot.scale.setScalar(fit);
-      bookRoot.position.y = -(1 - fit) * 0.28;
+      bookRoot.position.y = portrait ? 1.6 : -(1 - fit) * 0.28;
       SLOTS.portrait = portrait;
 
       SLOTS.hero = SLOTS.portrait
         ? [
-          { p: [-1.36, -0.18, -0.12], r: [-0.045, 0.4, 0.185], s: 1.25 },
-          { p: [0.2, 0.18, 0.6], r: [-0.05, -0.1, -0.035], s: 1.35 },
-          { p: [1.62, -0.22, -0.34], r: [-0.045, -0.42, -0.17], s: 1.25 },
+          { p: [-1.36, -0.58, -0.12], r: [-0.045, 0.4, 0.185], s: 1.25 },
+          { p: [0.2, -0.22, 0.6], r: [-0.05, -0.1, -0.035], s: 1.35 },
+          { p: [1.62, -0.62, -0.34], r: [-0.045, -0.42, -0.17], s: 1.25 },
         ]
         : [
           { p: [-2.05, -0.58, -0.12], r: [-0.045, 0.4, 0.185], s: 1.22 },
