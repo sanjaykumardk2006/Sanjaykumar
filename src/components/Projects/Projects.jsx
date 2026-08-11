@@ -75,8 +75,10 @@ export default function Projects() {
                   </a>
                   {p.liveUrl && p.liveUrl !== '#' && (
                     <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="pg-live-link">
-                      <i className="fas fa-link" style={{ marginRight: '6px' }} />
-                      {p.liveUrl.replace(/^https?:\/\//, '')}
+                      <i className="fas fa-link" style={{ marginRight: '6px', flexShrink: 0 }} />
+                      <span style={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0 }}>
+                        {p.liveUrl.replace(/^https?:\/\//, '')}
+                      </span>
                     </a>
                   )}
                 </div>
