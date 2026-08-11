@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import BooksShowcase from '../BooksShowcase/BooksShowcase'
 import './Projects.css'
 
 const projects = [
@@ -50,42 +51,29 @@ export default function Projects() {
           <span className="heading-sub">Things I've Built</span>
         </m.div>
 
-        <div className="projects-grid">
-          {projects.map((p, index) => (
-            <m.div 
-              key={p.id}
-              className="project-grid-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-            >
-              <div className="pg-card-top">
-                <h3 className="pg-title">{p.title}</h3>
-                <p className="pg-desc">{p.desc}</p>
-                <div className="pg-tags">
-                  {p.tags.map(t => <span key={t}>{t}</span>)}
-                </div>
-              </div>
-              
-              <div className="pg-card-bottom">
-                <div className="pg-actions">
-                  <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="pg-btn pg-btn-primary">
-                    <i className="fab fa-github" /> GitHub
-                  </a>
-                  {p.liveUrl && p.liveUrl !== '#' && (
-                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="pg-live-link">
-                      <i className="fas fa-link" style={{ marginRight: '6px', flexShrink: 0 }} />
-                      <span style={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0 }}>
-                        {p.liveUrl.replace(/^https?:\/\//, '')}
-                      </span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </m.div>
-          ))}
-        </div>
+        <m.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          style={{ height: '80vh', minHeight: '600px', width: '100%', marginTop: '40px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
+        >
+          <BooksShowcase 
+            books={projects.map(p => ({
+              id: p.id,
+              title: p.title,
+              author: 'Sanjaykumar D K',
+              year: '2026',
+              stars: 5,
+              desc: p.desc,
+              images: p.image ? { front: p.image } : undefined,
+              liveUrl: p.liveUrl,
+              githubUrl: p.githubUrl
+            }))} 
+            heroTitle="Projects" 
+            showNav={false} 
+          />
+        </m.div>
       </div>
     </section>
   )

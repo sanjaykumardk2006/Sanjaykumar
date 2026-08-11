@@ -96,7 +96,8 @@ export default function Qualifications() {
           <div className="certs-showcase">
             <CertStackCard 
               items={certs.map(c => ({ ...c, description: c.issuer }))} 
-              autoPlay={false}
+              autoPlay={true}
+              autoPlayInterval={3000}
             />
           </div>
         </m.div>
