@@ -13,6 +13,7 @@ export default function CertStackCard({
 }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState(1);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     const activeItem = items[activeIndex];
 
@@ -120,6 +121,8 @@ export default function CertStackCard({
                                         alt={item.title}
                                         className="cert-stack-img"
                                         draggable={false}
+                                        onClick={() => isActive && setSelectedImage(item.image)}
+                                        style={{ cursor: isActive ? 'zoom-in' : 'default' }}
                                     />
                                 </motion.div>
                             );
@@ -169,6 +172,26 @@ export default function CertStackCard({
                     </div>
                 )}
             </div>
+
+            {/* Modal Overlay */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        className="cert-modal-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <div className="cert-modal-content" onClick={(e) => e.stopPropagation()}>
+                            <button className="cert-modal-close" onClick={() => setSelectedImage(null)}>
+                                <i className="fas fa-times" />
+                            </button>
+                            <img src={selectedImage} alt="Certificate Enlarged" className="cert-modal-img" />
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
