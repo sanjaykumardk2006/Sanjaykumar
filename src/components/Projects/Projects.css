@@ -1,5 +1,6 @@
 .projects-section {
   overflow: hidden;
+  padding-bottom: 40px !important;
 }
 
 .projects-header {
@@ -179,8 +180,11 @@
 
 @media (max-width: 768px) {
   .projects-showcase-wrapper {
-    height: 65vh;
-    min-height: 420px;
+    height: 50vh;
+    min-height: 380px;
     border-radius: 16px;
+  }
+  .projects-section {
+    padding-bottom: 10px !important;
   }
 }
