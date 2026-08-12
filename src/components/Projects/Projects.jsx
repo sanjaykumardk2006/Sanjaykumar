@@ -70,7 +70,7 @@ export default function Projects() {
               liveUrl: p.liveUrl,
               githubUrl: p.githubUrl
             }))} 
-            heroTitle="Projects" 
+            heroTitle="Explore" 
             showNav={false} 
           />
         </m.div>
