@@ -170,7 +170,12 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, height 0.6s cubic-bezier(0.22, 1, 0.36, 1), min-height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects-showcase-wrapper:has(.book-showcase[data-state="detail"]),
+.projects-showcase-wrapper:has(.book-showcase[data-state="opening"]) {
+  min-height: 680px;
 }
 
 .projects-showcase-wrapper:hover {
@@ -184,6 +189,13 @@
     min-height: 380px;
     border-radius: 16px;
   }
+  
+  .projects-showcase-wrapper:has(.book-showcase[data-state="detail"]),
+  .projects-showcase-wrapper:has(.book-showcase[data-state="opening"]) {
+    height: 85vh;
+    min-height: 580px;
+  }
+
   .projects-section {
     padding-bottom: 10px !important;
   }

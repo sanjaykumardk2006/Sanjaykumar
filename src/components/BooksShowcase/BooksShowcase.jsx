@@ -689,8 +689,9 @@ export function BooksShowcase({
       const a = dims.w / Math.max(1, dims.h);
       const portrait = a < 0.85;
       const fit = portrait ? clamp(a / 1.08, 0.38, 0.74) : clamp(a / 1.62, 0.52, 1);
+      const currentRootY = portrait ? 0.9 : -(1 - fit) * 0.28 - 0.1;
       bookRoot.scale.setScalar(fit);
-      bookRoot.position.y = portrait ? 0.9 : -(1 - fit) * 0.28 - 0.1;
+      bookRoot.position.y = currentRootY;
       SLOTS.portrait = portrait;
 
       SLOTS.hero = SLOTS.portrait
@@ -717,7 +718,7 @@ export function BooksShowcase({
         const freeTop = navB;
         const freeBot = Math.max(dims.h - panelH - gap, freeTop + 140);
         const midPx = (freeTop + freeBot) / 2;
-        const T13 = 0.23087, camZp = 9.9, zw = 0.8 * fit, rootY = -(1 - fit) * 0.28;
+        const T13 = 0.23087, camZp = 9.9, zw = 0.8 * fit, rootY = currentRootY;
         const yw = 0.1 + (1 - (2 * midPx) / dims.h) * T13 * (camZp - zw);
         const availW = (((freeBot - freeTop) * 0.92) / dims.h) * 2 * T13 * (camZp - zw);
         const s = clamp(availW / fit / 2.65, 0.42, 0.92);
