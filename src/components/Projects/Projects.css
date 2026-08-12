@@ -193,7 +193,7 @@
   .projects-showcase-wrapper:has(.book-showcase[data-state="detail"]),
   .projects-showcase-wrapper:has(.book-showcase[data-state="opening"]) {
     height: 85vh;
-    min-height: 580px;
+    min-height: 650px;
   }
 
   .projects-section {
