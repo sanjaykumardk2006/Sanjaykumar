@@ -278,17 +278,28 @@
   color: var(--bs-lav);
   font-size: clamp(16px, 1.25cqw, 19px);
   line-height: 1.65;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 @media (max-width: 760px) {
   .bs-detail-desc {
     margin-top: 16px;
     font-size: 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    max-height: 140px;
   }
+}
+
+.bs-detail-desc::-webkit-scrollbar {
+  width: 4px;
+}
+.bs-detail-desc::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+.bs-detail-desc::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .bs-detail-meta {
