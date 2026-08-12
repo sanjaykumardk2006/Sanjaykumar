@@ -688,8 +688,8 @@ export function BooksShowcase({
     function computeSlots() {
       const a = dims.w / Math.max(1, dims.h);
       const portrait = a < 0.85;
-      const fit = portrait ? clamp(a / 1.08, 0.38, 0.74) : clamp(a / 1.62, 0.52, 1);
-      const currentRootY = portrait ? 0.75 : -(1 - fit) * 0.28 - 0.2;
+      const fit = portrait ? clamp(a / 1.2, 0.32, 0.68) : clamp(a / 1.75, 0.45, 0.9);
+      const currentRootY = portrait ? 0.5 : -(1 - fit) * 0.28;
       bookRoot.scale.setScalar(fit);
       bookRoot.position.y = currentRootY;
       SLOTS.portrait = portrait;
