@@ -689,7 +689,7 @@ export function BooksShowcase({
       const a = dims.w / Math.max(1, dims.h);
       const portrait = a < 0.85;
       const fit = portrait ? clamp(a / 1.08, 0.38, 0.74) : clamp(a / 1.62, 0.52, 1);
-      const currentRootY = portrait ? 0.9 : -(1 - fit) * 0.28 - 0.1;
+      const currentRootY = portrait ? 0.75 : -(1 - fit) * 0.28 - 0.2;
       bookRoot.scale.setScalar(fit);
       bookRoot.position.y = currentRootY;
       SLOTS.portrait = portrait;
