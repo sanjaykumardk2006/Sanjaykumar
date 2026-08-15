@@ -46,7 +46,7 @@ index.html
 ### Hero Section
 - Displays the personal introduction and animated role text.
 - Includes social links for GitHub, LinkedIn, and LeetCode.
-- Uses Framer Motion for entrance a
+- Uses Framer Motion for entrance ani
 
 ### About Section
 - Shows the personal bio and the technology stack.
