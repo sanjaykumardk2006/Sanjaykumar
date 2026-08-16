@@ -53,7 +53,7 @@ index.html
 - Displays categories such as frontend, backend, databases, and tools.
 
 ### Projects Section
-- Shows featured projects with descriptions and GitHub link
+- Shows featured projects with descriptions and GitHub link.
 - Helps visitors quickly explore the developer's work.
 
 ### Contact Section
