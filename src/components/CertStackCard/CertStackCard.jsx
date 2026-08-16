@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./CertStackCard.css";
 
@@ -174,24 +175,27 @@ export default function CertStackCard({
             </div>
 
             {/* Modal Overlay */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <motion.div
-                        className="cert-modal-overlay"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setSelectedImage(null)}
-                    >
-                        <div className="cert-modal-content" onClick={(e) => e.stopPropagation()}>
-                            <button className="cert-modal-close" onClick={() => setSelectedImage(null)}>
-                                <i className="fas fa-times" />
-                            </button>
-                            <img src={selectedImage} alt="Certificate Enlarged" className="cert-modal-img" />
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {typeof document !== "undefined" && createPortal(
+                <AnimatePresence>
+                    {selectedImage && (
+                        <motion.div
+                            className="cert-modal-overlay"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <div className="cert-modal-content" onClick={(e) => e.stopPropagation()}>
+                                <button className="cert-modal-close" onClick={() => setSelectedImage(null)}>
+                                    <i className="fas fa-times" />
+                                </button>
+                                <img src={selectedImage} alt="Certificate Enlarged" className="cert-modal-img" />
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </div>
     );
 }
