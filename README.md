@@ -59,8 +59,7 @@ index.html
 ### Contact Section
 - Contains a form for name, email, subject, and message.
 - Validates required fields before submission.
-- Sends the form through EmailJS using the configured service and template.
-
+- Sends the form through EmailJS using the configured service 
 ### Extra UI Enhancements
 - Smooth scrolling with Lenis
 - Animated transitions with Framer Motion
