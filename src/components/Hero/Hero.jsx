@@ -29,6 +29,12 @@ const AudioSpectrum = () => {
 
     let animationId
     let isVisible = true
+    let lastFrameTime = performance.now()
+
+    const ACTIVE_FPS = 60
+    const SLOW_FPS = 12
+    const FRAME_MS_60FPS = 1000 / 60
+    const SLOW_MOTION_MULTIPLIER = 0.35
 
     const observer = new IntersectionObserver(([entry]) => {
       isVisible = entry.isIntersecting
@@ -73,11 +79,19 @@ const AudioSpectrum = () => {
       })
     }
 
-    const render = () => {
-      if (!isVisible) {
+    const render = (now) => {
+      const slowMode = !isVisible || document.hidden
+      const frameInterval = 1000 / (slowMode ? SLOW_FPS : ACTIVE_FPS)
+      const elapsed = now - lastFrameTime
+
+      if (elapsed < frameInterval) {
         animationId = requestAnimationFrame(render)
         return
       }
+
+      const deltaFrames = Math.min(elapsed / FRAME_MS_60FPS, 3)
+      const motionStep = deltaFrames * (slowMode ? SLOW_MOTION_MULTIPLIER : 1)
+      lastFrameTime = now
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
@@ -98,7 +112,7 @@ const AudioSpectrum = () => {
           bar.speed = (Math.random() * 0.1 + 0.05) * barSpeedMult
         }
         
-        bar.currentHeight += (bar.targetHeight - bar.currentHeight) * bar.speed
+        bar.currentHeight += (bar.targetHeight - bar.currentHeight) * bar.speed * motionStep
         
         const height = bar.currentHeight + 2 // minimum height
         
@@ -121,21 +135,21 @@ const AudioSpectrum = () => {
           p.alphaTarget = Math.random() * 0.5 + 0.5
           p.alphaSpeed = Math.random() * 0.01 + 0.005
         }
-        p.alpha += (p.alphaTarget - p.alpha) * p.alphaSpeed
+        p.alpha += (p.alphaTarget - p.alpha) * p.alphaSpeed * motionStep
         
         // Guaranteed smooth organic movement using sine waves
-        p.timeX += p.speedX
-        p.timeY += p.speedY
+        p.timeX += p.speedX * motionStep
+        p.timeY += p.speedY * motionStep
         
         p.xOffset = Math.sin(p.timeX) * p.ampX
         p.yOffset = Math.cos(p.timeY) * p.ampY
 
         // Very slow global rotation
-        p.angle += p.angularSpeed
+        p.angle += p.angularSpeed * motionStep
         
         // Animate outward from the ring on load (slowed down for majestic bloom effect)
         if (p.currentDistOffset < p.baseDistOffset - 0.1) {
-          p.currentDistOffset += (p.baseDistOffset - p.currentDistOffset) * 0.015
+          p.currentDistOffset += (p.baseDistOffset - p.currentDistOffset) * 0.015 * motionStep
         } else {
           p.currentDistOffset = p.baseDistOffset
         }
@@ -154,7 +168,7 @@ const AudioSpectrum = () => {
       animationId = requestAnimationFrame(render)
     }
     
-    render()
+    animationId = requestAnimationFrame(render)
     
     return () => {
       window.removeEventListener('resize', handleResize)
