@@ -133,7 +133,6 @@ export function BooksShowcase({
     try {
       renderer = new THREE.WebGLRenderer({ canvas: canvasEl, antialias: true, alpha: true });
     } catch (err) {
-      console.warn('BooksShowcase: WebGL renderer creation failed', err);
       const fail = document.createElement('div');
       fail.className = 'bs-empty';
       fail.textContent = 'This experience needs WebGL, which your browser blocked or does not support.';
