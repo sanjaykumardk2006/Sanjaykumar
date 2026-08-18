@@ -22,6 +22,5 @@ cssFiles.forEach(file => {
   if (content.includes('text-transform: uppercase')) {
     content = content.replace(/text-transform:\s*uppercase/g, 'text-transform: capitalize')
     fs.writeFileSync(file, content)
-    console.log('Updated:', file)
   }
 })
