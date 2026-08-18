@@ -43,7 +43,7 @@ const AudioSpectrum = () => {
 
     const isMobile = window.innerWidth <= 768
     const dotCount = isMobile ? 25 : 55
-    const barSpeedMult = isMobile ? 0.5 : 1.0 // Slow down bars on high-refresh-rate mobile screens
+    const barSpeedMult = isMobile ? 0.5 : 1.0
 
     const numBars = 100
     const bars = Array.from({ length: numBars }, (_, i) => ({
@@ -55,26 +55,23 @@ const AudioSpectrum = () => {
 
     const particles = []
     for (let i = 0; i < dotCount; i++) {
-      // Evenly distribute dots around the circle to prevent empty gaps
       const baseAngle = (i / dotCount) * Math.PI * 2
       const jitter = (Math.random() - 0.5) * (Math.PI * 2 / dotCount) * 0.8
       
       particles.push({
         angle: baseAngle + jitter,
-        baseDistOffset: Math.random() * 40 + 15, // Push them noticeably further from the ring
-        currentDistOffset: 0, // Start at the ring for intro animation
+        baseDistOffset: Math.random() * 40 + 15,
+        currentDistOffset: 0,
         size: Math.random() * 1.5 + 1.0,
         alpha: isMobile ? 1.0 : Math.random() * 0.5 + 0.5,
         alphaTarget: isMobile ? 1.0 : Math.random() * 0.5 + 0.5,
         alphaSpeed: isMobile ? 0 : Math.random() * 0.01 + 0.005,
-        // Sine wave based wandering
         timeX: Math.random() * Math.PI * 2,
         timeY: Math.random() * Math.PI * 2,
         speedX: Math.random() * 0.02 + 0.005,
         speedY: Math.random() * 0.02 + 0.005,
-        ampX: Math.random() * 15 + 10, // Allow more wandering space
-        ampY: Math.random() * 15 + 10, // Allow more wandering space
-        // Extremely slow orbit just to keep the whole cloud rotating
+        ampX: Math.random() * 15 + 10,
+        ampY: Math.random() * 15 + 10,
         angularSpeed: (Math.random() > 0.5 ? 1 : -1) * 0.0005,
       })
     }
@@ -98,14 +95,12 @@ const AudioSpectrum = () => {
       const cx = canvas.width / 2
       const cy = canvas.height / 2
       const photoRadius = canvas.width / 1.8 / 2
-      const baseRadius = photoRadius + 12 // clean gap from the image
+      const baseRadius = photoRadius + 12
       
       ctx.lineCap = 'round'
       
-      // Draw Bars
       for (let bar of bars) {
         if (Math.abs(bar.currentHeight - bar.targetHeight) < 0.5) {
-          // Mostly small bars, some higher peaks simulating audio
           bar.targetHeight = Math.random() > 0.75 
             ? Math.random() * (canvas.width * 0.06) 
             : Math.random() * (canvas.width * 0.02)
@@ -114,7 +109,7 @@ const AudioSpectrum = () => {
         
         bar.currentHeight += (bar.targetHeight - bar.currentHeight) * bar.speed * motionStep
         
-        const height = bar.currentHeight + 2 // minimum height
+        const height = bar.currentHeight + 2
         
         const innerX = cx + Math.cos(bar.angle) * baseRadius
         const innerY = cy + Math.sin(bar.angle) * baseRadius
@@ -124,12 +119,11 @@ const AudioSpectrum = () => {
         ctx.beginPath()
         ctx.moveTo(innerX, innerY)
         ctx.lineTo(outerX, outerY)
-        ctx.lineWidth = Math.max(1.5, canvas.width * 0.006) // Ensure it doesn't get too thin and look faded on mobile
+        ctx.lineWidth = Math.max(1.5, canvas.width * 0.006)
         ctx.strokeStyle = '#FFFFFF'
         ctx.stroke()
       }
       
-      // Draw Particles (dots)
       for (let p of particles) {
         if (Math.abs(p.alpha - p.alphaTarget) < 0.02 && !isMobile) {
           p.alphaTarget = Math.random() * 0.5 + 0.5
@@ -137,17 +131,14 @@ const AudioSpectrum = () => {
         }
         p.alpha += (p.alphaTarget - p.alpha) * p.alphaSpeed * motionStep
         
-        // Guaranteed smooth organic movement using sine waves
         p.timeX += p.speedX * motionStep
         p.timeY += p.speedY * motionStep
         
         p.xOffset = Math.sin(p.timeX) * p.ampX
         p.yOffset = Math.cos(p.timeY) * p.ampY
 
-        // Very slow global rotation
         p.angle += p.angularSpeed * motionStep
         
-        // Animate outward from the ring on load (slowed down for majestic bloom effect)
         if (p.currentDistOffset < p.baseDistOffset - 0.1) {
           p.currentDistOffset += (p.baseDistOffset - p.currentDistOffset) * 0.015 * motionStep
         } else {

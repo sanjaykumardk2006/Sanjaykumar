@@ -53,7 +53,7 @@ export default function CertSwiper({ certs = [] }) {
   }, [])
 
   useEffect(() => {
-    if (modalImage || isHovered) return; // Don't auto-play when modal is open or hovered
+    if (modalImage || isHovered) return
     const interval = setInterval(() => {
       advance()
     }, 3000)
@@ -70,10 +70,8 @@ export default function CertSwiper({ certs = [] }) {
         >
           <AnimatePresence>
             {certs.map((cert, idx) => {
-              // Calculate distance from active index
               const distanceFromActive = (idx - activeIndex + certs.length) % certs.length;
               
-              // We only want to show 3 cards to keep it clean
               if (distanceFromActive > 2 && certs.length > 3) return null;
 
               const isTop = distanceFromActive === 0;

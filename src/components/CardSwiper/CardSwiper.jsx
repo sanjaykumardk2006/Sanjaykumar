@@ -6,7 +6,6 @@ export default function CardSwiper({ teamMembers = [] }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [modalImage, setModalImage] = useState(null)
 
-  // Pre-filter just in case
   const cards = teamMembers || []
 
   const advance = () => {
@@ -17,7 +16,6 @@ export default function CardSwiper({ teamMembers = [] }) {
     setActiveIndex((prev) => (prev - 1 + cards.length) % cards.length)
   }
 
-  // Handle escape key for modal
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && modalImage) {
@@ -36,7 +34,6 @@ export default function CardSwiper({ teamMembers = [] }) {
       <div className="card-swiper-stacked">
         <div className="deck-container">
           
-          {/* Floating Edge Cards (Decorative Depth) */}
           <motion.div 
             className="floating-edge-card left-edge"
             animate={{ y: [0, -10, 0], rotate: -25 }}
@@ -125,7 +122,6 @@ export default function CardSwiper({ teamMembers = [] }) {
         </div>
       </div>
 
-      {/* Lightbox Modal Overlay */}
       <AnimatePresence>
         {modalImage && (
           <motion.div 

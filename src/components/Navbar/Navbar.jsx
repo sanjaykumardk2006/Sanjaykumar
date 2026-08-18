@@ -21,7 +21,6 @@ export default function Navbar() {
     setIsScrolled(latest > 50)
   })
 
-  // Track active section
   useEffect(() => {
     const onScroll = () => {
       const sections  = document.querySelectorAll('section[id]')

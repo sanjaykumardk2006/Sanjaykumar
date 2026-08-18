@@ -18,7 +18,6 @@ export default function CertStackCard({
 
     const activeItem = items[activeIndex];
 
-    // Auto-play effect
     useEffect(() => {
         if (!autoPlay || items.length <= 1) return;
 
@@ -44,7 +43,6 @@ export default function CertStackCard({
         }
     };
 
-    // Pre-calculate rotations for visual variety
     const rotations = useMemo(() => [4, -2, -9, 7], []);
 
     if (!items || items.length === 0) {

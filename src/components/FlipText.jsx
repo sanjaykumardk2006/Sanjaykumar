@@ -13,7 +13,6 @@ export function FlipText({
     const words = useMemo(() => children.split(separator), [children, separator]);
     const totalChars = children.length;
 
-    // Calculate character index for each position
     const getCharIndex = (wordIndex, charIndex) => {
         let index = 0;
         for (let i = 0; i < wordIndex; i++) {
@@ -39,7 +38,6 @@ export function FlipText({
                         {chars.map((char, charIndex) => {
                             const currentGlobalIndex = getCharIndex(wordIndex, charIndex);
 
-                            // Calculate delay - if together, use same delay for all
                             let calculatedDelay = delay;
                             if (!together) {
                                 const normalizedIndex = currentGlobalIndex / totalChars;

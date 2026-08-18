@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const defaultWords = ["LOADING", "COMPUTING", "SEARCHING", "RETRIEVING", "ASSEMBLING"]
 
-// Memoized Letter component for performance
 const Letter = memo(function Letter({
     char,
     letterDuration
@@ -45,7 +44,6 @@ const Letter = memo(function Letter({
     )
 })
 
-// Memoized Word component for performance
 const Word = memo(function Word({
     text,
     staggerDelay,
@@ -104,7 +102,6 @@ export function FlipFadeText({
 }) {
     const [index, setIndex] = useState(0)
 
-    // Memoize the interval callback
     const updateIndex = useCallback(() => {
         if (words.length > 1) {
             setIndex((prev) => (prev + 1) % words.length)
@@ -118,7 +115,6 @@ export function FlipFadeText({
         }
     }, [updateIndex, interval, words.length])
 
-    // Memoize the current word
     const currentWord = useMemo(() => words[index], [words, index])
 
     return (
