@@ -15,7 +15,6 @@ const projects = [
   {
     id: 'proj-freelancer',
     title: 'Freelancer Marketplace',
-    icon: 'fa-solid fa-bullseye', // similar to the "purpose" target icon
     desc: 'An online platform that connects businesses with independent professionals. Clients can easily post job openings with their specific needs and budgets, while freelancers can browse listings and apply. It simplifies the entire hiring process from reviewing proposals to assigning the final project.',
     image: '/proj-freelancer.png',
     tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
@@ -26,7 +25,6 @@ const projects = [
   {
     id: 'proj-water',
     title: 'Water Quality Prediction',
-    icon: 'fa-solid fa-eye', // similar to the "vision" eye icon
     desc: 'An AI-powered tool designed to analyze and predict the safety of wastewater. It automatically tests key water properties to grade the water quality as Good, Moderate, or Poor. Based on these results, it recommends the best treatment methods to protect our environment.',
     image: '/proj-water.png',
     tags: ['Python', 'NumPy','Matplotlib', 'Pandas'],
