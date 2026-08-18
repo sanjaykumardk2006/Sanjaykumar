@@ -51,7 +51,6 @@ const MagneticButton = ({ children, className, ...props }) => {
   )
 }
 
-// ✅ Replace these with your actual EmailJS credentials
 const SERVICE_ID  = 'service_95bvrwr'
 const TEMPLATE_ID = 'template_vaj43hn'
 const PUBLIC_KEY  = 'b2__WEMtdgromPClB'
@@ -88,9 +87,7 @@ export default function Contact() {
       formRef.current.reset()
       setTimeout(() => setStatus('idle'), 4000)
     } catch (err) {
-      console.error('EmailJS error:', err)
       setStatus('idle')
-      alert('Failed to send message. Please try again.')
     }
   }
 

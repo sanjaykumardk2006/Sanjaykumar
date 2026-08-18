@@ -230,7 +230,7 @@ export function BooksShowcase({
           material.needsUpdate = true;
         },
         undefined,
-        () => console.warn('Cover image failed to load, kept fallback cover:', imageURL)
+        () => {}
       );
     }
 
