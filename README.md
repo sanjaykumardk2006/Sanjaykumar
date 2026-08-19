@@ -10,7 +10,7 @@ The portfolio is a single-page application that presents:
 - a qualifications section
 - a projects section
 - a contact section with a working contact form
-- a footer and back-to-top expe
+- a footer and back-to-top experi
 
 ## 2. High-Level Workflow
 
