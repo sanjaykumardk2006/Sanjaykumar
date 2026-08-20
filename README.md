@@ -57,7 +57,7 @@ index.html
 - Helps visitors quickly explore the developer's work.
 
 ### Contact Section
-- Contains a form for name, email, subject, and message.
+- Contains a form for 
 - Validates required fields before submission.
 - Sends the form through EmailJS using the configured service and template.
 ### Extra UI Enhancements
