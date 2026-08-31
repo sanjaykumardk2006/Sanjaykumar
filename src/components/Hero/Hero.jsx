@@ -291,6 +291,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <div className="profile-wrap">
+            <img src="/profile.png" alt="Sanjaykumar D K" className="profile-photo" />
             <AudioSpectrum />
           </div>
           <m.div
