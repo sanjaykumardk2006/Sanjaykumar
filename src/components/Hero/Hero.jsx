@@ -95,7 +95,7 @@ const AudioSpectrum = () => {
       const cx = canvas.width / 2
       const cy = canvas.height / 2
       const photoRadius = canvas.width / 1.8 / 2
-      const baseRadius = photoRadius + 12
+      const baseRadius = photoRadius + 4
       
       ctx.lineCap = 'round'
       
