@@ -54,6 +54,8 @@ index.html
 
 ### Projects Section
 - Shows featured projects with descriptions and GitHub link.re
+1
+-
 - Helps visitors quickly explore the developer's work.
 
 ### Contact Section
