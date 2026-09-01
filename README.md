@@ -1,3 +1,10 @@
+
+# Portfolio
+
+<img width="1906" height="904" alt="image" src="https://github.com/user-attachments/assets/597e6521-728e-4b3b-9f27-7e8a31029877" />
+
+
+
 # Portfolio Workflow Documentation
 
 This project is a React + Vite portfolio website for Sanjaykumar D K. It is a frontend-only experience with animated sections, smooth scrolling, and a contact form that sends messages through EmailJS.
