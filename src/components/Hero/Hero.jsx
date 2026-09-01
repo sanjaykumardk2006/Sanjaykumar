@@ -187,16 +187,16 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+    transition: { staggerChildren: 0.2, delayChildren: 0.2 }
   }
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
   }
 }
 
@@ -206,7 +206,7 @@ const buttonVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut", delay: 0.4 }
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.6 }
   }
 }
 
@@ -286,9 +286,9 @@ export default function Hero() {
 
         <m.div
           className="hero-image"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
         >
           <div className="profile-wrap">
             <img src="/profile.png" alt="Sanjaykumar D K" className="profile-photo" />
@@ -297,9 +297,9 @@ export default function Hero() {
           <m.div
             className="hero-socials"
             style={{ marginTop: '100px' }}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1.0, ease: "easeOut" }}
+            transition={{ delay: 0.8, duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
           >
             <a href="https://github.com/sanjaykumardk2006" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
               <i className="fab fa-github" />
