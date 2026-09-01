@@ -43,7 +43,7 @@ const AudioSpectrum = () => {
 
     const isMobile = window.innerWidth <= 768
     const dotCount = isMobile ? 25 : 55
-    const barSpeedMult = isMobile ? 0.5 : 1.0
+    const barSpeedMult = 0.5
 
     const numBars = 100
     const bars = Array.from({ length: numBars }, (_, i) => ({
