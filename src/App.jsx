@@ -13,22 +13,22 @@ export default function App() {
   useEffect(() => {
     // Lenis Smooth Scroll
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.07, // Physics-based smoothing (default is 0.1, lower is smoother)
+      wheelMultiplier: 1, // Scroll speed
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
+      smoothTouch: true,
       touchMultiplier: 2,
       infinite: false,
     })
 
+    let rafId
     function raf(time) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
 
     // Global Cursor Spotlight
     const prefersFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)')
@@ -47,6 +47,7 @@ export default function App() {
 
     return () => {
       lenis.destroy()
+      cancelAnimationFrame(rafId)
       document.removeEventListener('mousemove', onMove)
       spotlight?.remove()
     }
