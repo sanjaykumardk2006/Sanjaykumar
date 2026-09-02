@@ -16,7 +16,7 @@ The portfolio is a single-page application that presents:
 - an about section with skills and tech stack
 - a qualifications section
 - a projects section
-- a contact section with a working contact fo
+- a contact section with a working contact form
 - a footer and back-to-top experience
 
 ## 2. High-Level Workflow
