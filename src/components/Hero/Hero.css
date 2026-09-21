@@ -98,9 +98,11 @@
   justify-self: end;
 }
 .profile-wrap { position: relative; width: clamp(168px, 25vw + 40px, 340px); height: clamp(168px, 25vw + 40px, 340px); }
+
 .profile-photo {
   width: 100%; height: 100%;
   border-radius: 50%; object-fit: cover;
+  object-position: center 35%;
   display: block;
   border: 1px solid rgba(255,255,255,0.1);
   position: relative; z-index: 1;
