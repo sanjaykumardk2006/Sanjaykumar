@@ -10,18 +10,6 @@ const certs = [
     image: '/cert-infosys-dbms.png',
   },
   {
-    id: 'cert-ai-fundamentals',
-    title: 'Artificial Intelligence Fundamentals',
-    issuer: 'IBM SkillsBuild',
-    image: '/cert-ibm-ai-fundamentals.png',
-  },
-  {
-    id: 'cert-accenture',
-    title: 'Data processing and visualisation',
-    issuer: 'Accenture / FutureSkills Prime',
-    image: '/cert-accenture.jpg',
-  },
-  {
     id: 'cert-coptercode',
     title: 'Full Stack Developer-Intern',
     issuer: 'COPTERCODE',
