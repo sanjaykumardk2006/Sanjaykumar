@@ -5,7 +5,7 @@
 
 
 
-# Portfolio Workflow Documenta
+# Portfolio Workflow Documentation
 
 This project is a React + Vite portfolio website for Sanjaykumar D K. It is a frontend-only experience with animated sections, smooth scrolling, and a contact form that sends messages through EmailJS.
 
