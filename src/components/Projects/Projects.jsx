@@ -10,7 +10,6 @@ const projects = [
     tags: ['IoT', 'Sensors', 'Real-time', 'Alerts'],
     liveUrl: '#',
     githubUrl: 'https://github.com/sanjaykumardk2006/Fire-Alarm',
-    features: ['Real-time Detection', 'Automated Alerts', 'Emergency Communication', 'Rapid Response']
   },
   {
     id: 'proj-freelancer',
@@ -20,7 +19,6 @@ const projects = [
     tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     liveUrl: 'https://freelancer-hubb.vercel.app/',
     githubUrl: 'https://github.com/sanjaykumardk2006/FSD',
-    features: ['Job Posting', 'Proposal Submission', 'Role-based Auth', 'Project Tracking']
   },
   {
     id: 'proj-water',
@@ -30,7 +28,6 @@ const projects = [
     tags: ['Python', 'NumPy','Matplotlib', 'Pandas'],
     liveUrl: '#',
     githubUrl: 'https://github.com/sanjaykumardk2006/Water-Treatment-Analysis',
-    features: ['94% Accuracy Model', 'Random Forest Classifier', 'Interactive Dashboard', 'Data Visualization']
   }
 ]
 
