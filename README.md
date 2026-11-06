@@ -109,7 +109,7 @@ src/
 
 ## 7. Tech Stack
 
-- React 19
+- React 
 - Vite
 - Framer Motion
 - Lenis
