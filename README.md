@@ -9,7 +9,7 @@
 
 This project is a React + Vite portfolio website for Sanjaykumar D K. It is a frontend-only experience with animated sections, smooth scrolling, and a contact form that sends messages through EmailJS.
 
-## 1. Project Overview
+## 1. Project Overvi
 
 The portfolio is a single-page application that presents:
 - a hero section with intro and social links
