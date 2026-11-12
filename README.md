@@ -19,7 +19,7 @@ The portfolio is a single-page application that presents:
 - a contact section with a working contact form
 - a footer and back-to-top experience
 
-## 2. High-Level Workflow
+## 2. High-Level Wor
 
 1. The browser loads the app from `index.html`.
 2. `src/main.jsx` mounts the React app into the `#root` element.
