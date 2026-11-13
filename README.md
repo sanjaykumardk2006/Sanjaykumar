@@ -39,7 +39,7 @@ The portfolio is a single-page application that presents:
 5. When a user interacts with the contact form, the form data is validated and sent using EmailJS.
 6. The site is deployed on Vercel and served as a static frontend.
 
-## 3. Component Flow
+## 3. Component
 
 ```text
 index.html
