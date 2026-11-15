@@ -27,7 +27,7 @@ The portfolio is a single-page application that presents:
    - smooth scrolling with Lenis
    - cursor spotlight effect
    - navigation and all major sections
-4. Each section is rendered as a React component:
+4. Each section is rendered as a React co
    - `Navbar`
    - `Hero`
    - `About`
