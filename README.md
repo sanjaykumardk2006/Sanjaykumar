@@ -30,7 +30,7 @@ The portfolio is a single-page application that presents:
 4. Each section is rendered as a React component:
    - `Navbar`
    - `Hero`
-   - 
+   - `About`
    - `Qualifications`
    - `Projects`
    - `Contact`
