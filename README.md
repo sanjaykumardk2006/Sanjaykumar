@@ -14,7 +14,7 @@ This project is a React + Vite portfolio website for Sanjaykumar D K. It is a fr
 The portfolio is a single-page application that presents:
 - a hero section with intro and social links
 - an about section with skills and tech stack
-- a qualifications section
+- a qualifications sec
 - a projects section
 - a contact section with a working contact form
 - a footer and back-to-top experience
